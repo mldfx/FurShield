@@ -1,0 +1,244 @@
+/* Import shared styles */
+@import url("./LandingPage.css");
+
+/* Feedback Page Specific Styles */
+.feedback-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #2d3748;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Feedback Hero Section */
+.feedback-hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #68d391 0%, #fed7cc 100%);
+  color: #2d3748;
+  text-align: center;
+}
+
+.feedback-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.feedback-hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+/* Feedback Content */
+.feedback-content {
+  padding: 4rem 0;
+  background-color: #f7fafc;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* Feedback Form */
+.feedback-form-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+}
+
+.feedback-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.rating-stars input[type="radio"] {
+  display: none;
+}
+
+.rating-stars label {
+  font-size: 2rem;
+  color: #cbd5e0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating-stars input[type="radio"]:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+  color: #fed7cc;
+}
+
+/* Feedback Info */
+.feedback-info-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+}
+
+.feedback-benefits {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.benefit-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #68d391;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Feedback Stats */
+.feedback-stats {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-stats h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.feedback-stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feedback-stats ul li {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.feedback-stats ul li::before {
+  content: "✓";
+  color: #68d391;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feedback-form,
+  .feedback-benefits,
+  .feedback-stats {
+    padding: 1.5rem;
+  }
+
+  .rating-stars label {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2d3748;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    position: static;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .auth-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
