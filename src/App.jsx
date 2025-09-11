@@ -1,20 +1,19 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-import LandingPage from "./pages/LandingPage"
-import LoginPage from "./pages/LoginPage"
-import RegisterPage from "./pages/RegisterPage"
-import PetOwnerDashboard from "./pages/PetOwnerDashboard"
-import VeterinarianDashboard from "./pages/VeterinarianDashboard"
-import ShelterDashboard from "./pages/ShelterDashboard"
-import AboutPage from "./pages/AboutPage"
-import ContactPage from "./pages/ContactPage"
-import FeedbackPage from "./pages/FeedbackPage"
-import DocumentUpload from "./components/petowner/DocumentUpload"
+import { Routes, Route, Navigate } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import PetOwnerDashboard from "./pages/PetOwnerDashboard";
+import VeterinarianDashboard from "./pages/VeterinarianDashboard";
+import ShelterDashboard from "./pages/ShelterDashboard";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import FeedbackPage from "./pages/FeedbackPage";
+import DocumentUpload from "./components/petowner/DocumentUpload";
 import HealthTimeline from "./components/petowner/HealthTimeline";
-import InsuranceManagement from "./components/petowner/InsuranceManagement";
-import HealthRecords from "./components/petowner/HealthRecords"
-import ProductCatalog from "./pages/ProductCatalog"  
-import MyPets from "./components/petowner/Mypet"
-import "./App.css"
+import HealthRecords from "./components/petowner/HealthRecords";
+import ProductCatalog from "./pages/ProductCatalog";
+import MyPets from "./components/petowner/Mypet";
+import "./App.css";
 
 function App() {
   return (
@@ -32,16 +31,12 @@ function App() {
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
-        <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-        
         <Route path="/products" element={<ProductCatalog />} />
         <Route path="/mypet" element={<MyPets />} />
         <Route path="*" element={<Navigate to="/" replace />} />
-
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
