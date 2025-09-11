@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom"
-import DashboardNavbar from "../components/DashboardNavbar"
-import "./PetOwnerDashboard.css"
+import { Link } from "react-router-dom";
+import DashboardNavbar from "../components/DashboardNavbar";
+import "./PetOwnerDashboard.css";
 
 const PetOwnerDashboard = () => {
   return (
@@ -83,20 +83,22 @@ const PetOwnerDashboard = () => {
               </div>
             </div>
 
-            <div className="dashboard-card">
-              <h3>📚 Care Resources</h3>
-              <p>Pet care information will be implemented here</p>
-              <div className="placeholder-text">
-                • Feeding guidelines
-                <br />• Exercise tips
-                <br />• Health articles and videos
+            <Link to="/dashboard/care-resources">
+              <div className="dashboard-card">
+                <h3>📚 Care Resources</h3>
+                <p>Pet care information will be implemented here</p>
+                <div className="placeholder-text">
+                  • Feeding guidelines
+                  <br />• Exercise tips
+                  <br />• Health articles and videos
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PetOwnerDashboard
+export default PetOwnerDashboard;
