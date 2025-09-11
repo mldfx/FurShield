@@ -8,6 +8,10 @@ import ShelterDashboard from "./pages/ShelterDashboard"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import FeedbackPage from "./pages/FeedbackPage"
+import DocumentUpload from "./components/petowner/DocumentUpload"
+import HealthTimeline from "./components/petowner/HealthTimeline";
+import InsuranceManagement from "./components/petowner/InsuranceManagement";
+import HealthRecords from "./components/petowner/HealthRecords"
 import "./App.css"
 
 function App() {
@@ -23,7 +27,12 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/dashboard/health-records" element={<HealthRecords />} />
+        <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
+        <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
+        <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+        
       </Routes>
     </div>
   )
