@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import DashboardNavbar from "../components/DashboardNavbar";
 import "./VeterinarianDashboard.css";
 import {
@@ -19,11 +19,6 @@ import {
   Book,
 } from "lucide-react";
 import axios from "axios";
-=======
-import { Link } from "lucide-react"
-import DashboardNavbar from "../components/DashboardNavbar"
-import "./VeterinarianDashboard.css"
->>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
 
 const VeterinarianDashboard = () => {
   const [isEditing, setIsEditing] = useState(null);
@@ -39,22 +34,23 @@ const VeterinarianDashboard = () => {
   const [newSlot, setNewSlot] = useState({ label: "", start: "", end: "" });
   const [expanded, setExpanded] = useState(false);
 
-
   // Change to accept data
-  const [appointments, setAppointments] = useState([{
-    appointmentId: "appt_003",
-    petId: "pet_103",
-    petName: "Luna",
-    breed: "Persian Cat",
-    species: "Cat",
-    ownerName: "Ada Nwosu",
-    ownerContact: "+234 803 456 7890",
-    date: "2025-09-15",
-    time: "11:00",
-    status: "Rescheduled",
-    notes: "Vaccination and grooming",
-    vetId: "vet_001"
-  }]);
+  const [appointments, setAppointments] = useState([
+    {
+      appointmentId: "appt_003",
+      petId: "pet_103",
+      petName: "Luna",
+      breed: "Persian Cat",
+      species: "Cat",
+      ownerName: "Ada Nwosu",
+      ownerContact: "+234 803 456 7890",
+      date: "2025-09-15",
+      time: "11:00",
+      status: "Rescheduled",
+      notes: "Vaccination and grooming",
+      vetId: "vet_001",
+    },
+  ]);
   const [filter, setFilter] = useState("All");
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const [showRescheduleModal, setShowRescheduleModal] = useState(false);
@@ -132,13 +128,19 @@ const VeterinarianDashboard = () => {
   return (
     <div className="veterinarian-dashboard">
       <DashboardNavbar userRole="Veterinarian" />
-      
+
       <main className="vet-dashboard">
         {/* Links to other pages */}
         <nav className="extra-patient-link-vet">
-          {/*Treatment Logs */}
-          <a href=""><LucideCross/>Treatment Logs</a>
-          <a href=""><Book/>Structured Views</a>
+          {/* Treatment Logs */}
+          <Link to="/treatment-log">
+            <LucideCross />
+            Treatment Logs
+          </Link>
+          <Link to="/structured-view">
+            <Book />
+            Structured Views
+          </Link>
         </nav>
         {/* Welcome Section */}
         <div className="vet-container">
@@ -149,49 +151,13 @@ const VeterinarianDashboard = () => {
                 alt="Vet Welcome"
               />
             </div>
-<<<<<<< HEAD
             <div className="welcome-content-vet">
               <h2>
-                Hi, Dr <span className="user-name">{drDetails.fullName}</span>
+                Hi, Dr{" "}
+                <span className="user-name">{drDetails.fullName}</span>
               </h2>
               <p>Your dashboard provides an overview of all your tasks.</p>
             </div>
-=======
-
-            <div className="dashboard-card">
-              <h3>📅 Appointments</h3>
-              <p>Appointment management will be implemented here</p>
-              <div className="placeholder-text">
-                • View upcoming bookings
-                <br />• Approve/reschedule appointments
-                <br />• Update availability
-              </div>
-            </div>
-
-            <a href="/structured-view" className="structured-view-link">
-              <div className="dashboard-card">
-                <h3>🐾 Patient Records</h3>
-                <p>Pet medical history will be implemented here</p>
-                <div className="placeholder-text">
-                  • View pet medical history
-                  <br />• Access booked pets' data
-                  <br />• Patient information overview
-                </div>
-              </div>
-            </a>
-
-            <a href="/treatment-log" className="treatment-logs-link">
-              <div className="dashboard-card">
-                <h3>📝 Treatment Logs</h3>
-                <p>Treatment logging will be implemented here</p>
-                <div className="placeholder-text">
-                  • Log treatments & observations
-                  <br />• Diagnosis and medication records
-                  <br />• Follow-up action plans
-                </div>
-              </div>
-            </a>
->>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
           </div>
         </div>
 
@@ -209,13 +175,22 @@ const VeterinarianDashboard = () => {
                   <User />
                 </div>
                 <p>{drDetails.fullName}</p>
-                <span className={`chevron-icon ${isEditing === "fullName" ? "rotate" : ""}`}>
+                <span
+                  className={`chevron-icon ${
+                    isEditing === "fullName" ? "rotate" : ""
+                  }`}
+                >
                   <ChevronDown color="var(--popover-foreground)" />
                 </span>
               </div>
               {isEditing === "fullName" && (
                 <div className="field-edit">
-                  <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} autoFocus />
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    autoFocus
+                  />
                   <button onClick={() => handleSave("fullName")}>Save</button>
                   <button onClick={() => setIsEditing(null)}>Cancel</button>
                 </div>
@@ -224,19 +199,27 @@ const VeterinarianDashboard = () => {
 
             {/* Number */}
             <div className="vet-info">
-              <div className="vet-info-content" onClick={() => toggleEdit("phoneNum")}>
+              <div
+                className="vet-info-content"
+                onClick={() => toggleEdit("phoneNum")}
+              >
                 <div className="vet-info-icon">
                   <PhoneCall />
                 </div>
                 <p>{drDetails.phoneNum}</p>
-                <span className={`chevron-icon ${ isEditing === "phoneNum" ? "rotate" : "" }`}>
+                <span
+                  className={`chevron-icon ${
+                    isEditing === "phoneNum" ? "rotate" : ""
+                  }`}
+                >
                   <ChevronDown color="var(--popover-foreground)" />
                 </span>
               </div>
               {isEditing === "phoneNum" && (
                 <div className="field-edit">
-                  <input type="text"
-            value={inputValue}
+                  <input
+                    type="text"
+                    value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     autoFocus
                   />

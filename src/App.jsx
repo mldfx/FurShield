@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { Routes, Route, Navigate } from "react-router-dom"
-import LandingPage from "./pages/LandingPage"
-import LoginPage from "./pages/LoginPage"
-import RegisterPage from "./pages/RegisterPage"
-import PetOwnerDashboard from "./pages/PetOwnerDashboard"
-import VeterinarianDashboard from "./pages/VeterinarianDashboard"
-import ShelterDashboard from "./pages/ShelterDashboard"
-import AboutPage from "./pages/AboutPage"
-import ContactPage from "./pages/ContactPage"
-import FeedbackPage from "./pages/FeedbackPage"
-import "./App.css"
-import PetMedicalHistory from "./components/vet/PetMedicalHistory"
-=======
 import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
@@ -33,7 +19,6 @@ import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import DocumentUpload from "./components/petowner/DocumentUpload";
 import CareOptions from "./components/care/CareOptions";
->>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
 
 function App() {
   return (
@@ -51,9 +36,6 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
-<<<<<<< HEAD
-        <Route path="/vethistory" element={<PetMedicalHistory />} />
-=======
         <Route path="/treatment-log" element={<TreatmentLogs />} />
         <Route path="/structured-view" element={<StructuredView />} />
         <Route path="/cat" element={<Cat />} />
@@ -65,7 +47,6 @@ function App() {
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
->>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
