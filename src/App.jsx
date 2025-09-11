@@ -12,6 +12,8 @@ import DocumentUpload from "./components/petowner/DocumentUpload"
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import InsuranceManagement from "./components/petowner/InsuranceManagement";
 import HealthRecords from "./components/petowner/HealthRecords"
+import ProductCatalog from "./pages/ProductCatalog"  
+import MyPets from "./components/petowner/Mypet"
 import "./App.css"
 
 function App() {
@@ -33,6 +35,10 @@ function App() {
         <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         
+        <Route path="/products" element={<ProductCatalog />} />
+        <Route path="/mypet" element={<MyPets />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+
       </Routes>
     </div>
   )
