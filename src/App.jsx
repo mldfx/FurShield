@@ -8,6 +8,8 @@ import ShelterDashboard from "./pages/ShelterDashboard"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import FeedbackPage from "./pages/FeedbackPage"
+import ProductCatalog from "./pages/ProductCatalog"  
+import MyPets from "./components/petowner/Mypet"
 import "./App.css"
 
 function App() {
@@ -23,7 +25,10 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/products" element={<ProductCatalog />} />
+        <Route path="/mypet" element={<MyPets />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+
       </Routes>
     </div>
   )

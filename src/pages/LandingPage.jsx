@@ -31,6 +31,7 @@ const LandingPage = () => {
           <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/products">Products</Link>
             <Link to="/feedback">Feedback</Link>
             <div className="auth-buttons">
               <Link to="/login" className="btn btn-secondary">
