@@ -1,6 +1,228 @@
-/* Gbebmi - Treatment Logs Styles */
-/* TODO: Add styles for treatment logging interface */
+.vet-form-bg-icons{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+.vet-form-icon{
+  position: absolute;
+  color: #81c028;
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.top-left{
+  top: 20px;
+  left: 20px;
+}
+.top-right{
+  top: 20px;
+  right: 20px;
+}
+.bottom-left{
+  bottom: 20px;
+  left: 20px;
+}
+.bottom-right{
+  bottom: 20px;
+  right: 20px;
+}
 .treatment-logs {
-  /* Add your styles here */
+  margin: 50px;
+  width: 70%;
+  color: #2d3748;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f4fffb, #e0f7d4);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.treatment-log-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #81c028;
+}
+.treatment-log-title hr{
+  border: none;
+  border-top: 3px solid #365c12;
+  margin: 10px 0;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.treatment-log-form{
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  outline: 2px solid #ccc;
+  outline-offset: 4px;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.6);
+}
+.treatment-log-form-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+}
+.treatment-log-form label{
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.treatment-log-form input, .treatment-log-form textarea, .treatment-log-form select{
+  padding: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  font-size: .9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+input, textarea, select {
+  transition: all 0.3s ease;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #81c028;
+  box-shadow: 0 0 8px rgba(129,192,40,0.4);
+  outline: none;
+}
+
+.treatment-log-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.treatment-log-form label {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #2d3748;
+}
+
+.treatment-log-form button{
+  padding: 10px;
+  background-color: #81c028;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.treatment-log-form button:hover{
+  background-color: #59961f;
+  transform: scale(1.05);
+}
+
+.toast-popup {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #81c028;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: slideUp 0.5s ease;
+}
+.return-btn{
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  background-color: #81c028;
+  font-size: larger;
+  border-radius: 5px;
+  width: 150px;
+  height: auto;
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+}
+.return-btn a{
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+}
+.return-btn a:hover{
+  background-color: #59961f;
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+@keyframes slideUp {
+  0% { transform: translate(-50%, 50px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
+}
+
+
+@media (max-width: 1024px) {
+  .treatment-logs {
+    width: 80%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+  .treatment-log-form{
+    width: 80%;
+    padding: 15px;
+  }
+  .treatment-log-form-container{
+    width: 80%;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .treatment-logs {
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+  .treatment-log-form{
+    width: 80%;
+    padding: 15px;
+  }
+  .treatment-log-form-container{
+    width: 80%;
+    gap: 10px;
+  }
+}
+@media (max-width: 550px) {
+  .vet-form-icon{
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .treatment-logs {
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+  .treatment-log-form{
+    width: 90%;
+    padding: 10px;
+  }
+  .treatment-log-form-container{
+    width: 90%;
+    gap: 8px;
+  }
 }

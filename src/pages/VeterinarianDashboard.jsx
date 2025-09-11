@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import DashboardNavbar from "../components/DashboardNavbar";
 import "./VeterinarianDashboard.css";
@@ -18,6 +19,11 @@ import {
   Book,
 } from "lucide-react";
 import axios from "axios";
+=======
+import { Link } from "lucide-react"
+import DashboardNavbar from "../components/DashboardNavbar"
+import "./VeterinarianDashboard.css"
+>>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
 
 const VeterinarianDashboard = () => {
   const [isEditing, setIsEditing] = useState(null);
@@ -143,12 +149,49 @@ const VeterinarianDashboard = () => {
                 alt="Vet Welcome"
               />
             </div>
+<<<<<<< HEAD
             <div className="welcome-content-vet">
               <h2>
                 Hi, Dr <span className="user-name">{drDetails.fullName}</span>
               </h2>
               <p>Your dashboard provides an overview of all your tasks.</p>
             </div>
+=======
+
+            <div className="dashboard-card">
+              <h3>📅 Appointments</h3>
+              <p>Appointment management will be implemented here</p>
+              <div className="placeholder-text">
+                • View upcoming bookings
+                <br />• Approve/reschedule appointments
+                <br />• Update availability
+              </div>
+            </div>
+
+            <a href="/structured-view" className="structured-view-link">
+              <div className="dashboard-card">
+                <h3>🐾 Patient Records</h3>
+                <p>Pet medical history will be implemented here</p>
+                <div className="placeholder-text">
+                  • View pet medical history
+                  <br />• Access booked pets' data
+                  <br />• Patient information overview
+                </div>
+              </div>
+            </a>
+
+            <a href="/treatment-log" className="treatment-logs-link">
+              <div className="dashboard-card">
+                <h3>📝 Treatment Logs</h3>
+                <p>Treatment logging will be implemented here</p>
+                <div className="placeholder-text">
+                  • Log treatments & observations
+                  <br />• Diagnosis and medication records
+                  <br />• Follow-up action plans
+                </div>
+              </div>
+            </a>
+>>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
           </div>
         </div>
 

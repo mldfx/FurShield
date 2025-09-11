@@ -1,6 +1,183 @@
-/* Clienton - Health Timeline Styles */
-/* TODO: Add styles for visual timeline interface */
+/* Timeline Form Styles */
+.timeline-form {
+  background: #f6fffa;
+  border: 1px solid #A8E6CF;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
 
-.health-timeline {
-  /* Add your styles here */
+.timeline-form-group {
+  margin-bottom: 16px;
+}
+
+.timeline-form-group label {
+  display: block;
+  font-weight: 500;
+  color: #2F4F4F;
+  margin-bottom: 6px;
+}
+
+.timeline-form-group input,
+.timeline-form-group select,
+.timeline-form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #A8E6CF;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  margin-bottom: 4px;
+  transition: border-color 0.2s;
+}
+
+.timeline-form-group input:focus,
+.timeline-form-group select:focus,
+.timeline-form-group textarea:focus {
+  border-color: #7ad97a;
+  outline: none;
+}
+
+.timeline-add-btn {
+  background: linear-gradient(90deg, #A8E6CF 0%, #7ad97a 100%);
+  color: #2F4F4F;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+
+.timeline-add-btn:hover {
+  background: linear-gradient(90deg, #7ad97a 0%, #A8E6CF 100%);
+}
+
+.timeline-error {
+  color: #ff4d4f;
+  background: #fff0f0;
+  border: 1px solid #ffbcb3;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.healthTimeline-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  border: 1px solid #A8E6CF; 
+}
+
+.healthTimeline-card h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #2F4F4F;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.healthTimeline-intrp {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  background: #fff8f5;
+  padding: 12px;
+  border-radius: 8px ;
+  border: 1px solid #FFDAB9;
+}
+
+/*Timeline Styles*/
+.timeline {
+  position: relative;
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 3px solid #A8E6CF;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -28px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2F4F4F;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  padding: 6px;
+}
+
+.timeline-content {
+  background: linear-gradient(135deg, #ffffff, #f6fffa);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  position: relative;
+}
+
+.timeline-content .tag {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/*tag colors*/
+.tag.vaccination {background: #98ff98; color: #2F4F4F;}
+.tag.allergy {background: #ffda89; color: #2F4F4F;}
+.tag.illness {background: #ffbcb3; color: #2F4F4F;}
+.tag.treatment {background: #ff9f80; color: white;}
+.tag.milestone {background: #7ad97a; color: white;}
+
+/*date and description*/
+.timeline-date {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/*responsive*/
+@media (max-width: 600px) {
+  .timeline{
+    padding-left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 35px;
+  }
+  .timeline-icon {
+    left: -25px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
 }

@@ -1,6 +1,215 @@
-/* Dabira - Care Options Styles */
-/* TODO: Add styles for care options interface */
+.care-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 80vw;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#68d391, #48bb78);
+  border-radius: 16px;
+  margin: auto;
+  margin-top: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  color: white;
+}
 
-.care-options {
-  /* Add your styles here */
+h2 {
+  color: white;
+  margin-top: 30px;
+}
+
+/* Search Bar  */
+.search-section {
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #a3e635;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* 🗂️ Category Filter */
+.category-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background-color: white;
+  color: #2f855a;
+  font-weight: bold;
+}
+
+/* 🟢 Default Grid — used when "All" is selected */
+.articles-grid,
+.videos-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.articles-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.videos-grid {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+/* 🔴 Full-width mode — when a specific category is selected */
+.care-container.category-selected .articles-grid,
+.care-container.category-selected .videos-grid {
+  grid-template-columns: 1fr;
+}
+
+.article-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-card h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.article-tag {
+  display: inline-block;
+  background: #2f855a;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.video-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.video-wrapper {
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ❓ FAQ */
+.faq-section {
+  margin-top: 20px;
+}
+
+.faq-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+/* 🚫 No Results */
+.no-results {
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 🔹 Navbar (unchanged) */
+.care-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.navbar-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.back-btn {
+  background-color: white;
+  color: #2f855a;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #f0fff4;
+  color: #276749;
+  transform: scale(1.05);
+}
+/* 🟢 Only articles go full-width when category is selected */
+.care-container.category-selected .article-card {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+/* Ensure articles stack vertically in category view */
+.care-container.category-selected .articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Keep videos and FAQs in their original grid layout */
+.care-container.category-selected .videos-grid,
+.care-container.category-selected .faq-section {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+/* ✅ PRESERVE FORMATTING FOR MULTILINE CONTENT */
+.article-card p,
+.faq-item p {
+  white-space: pre-line;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .care-container {
+    width: 95vw;
+    padding: 10px;
+  }
+
+  .articles-grid,
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -160,6 +160,7 @@
   padding: 10px;
   animation: slideDown 0.3s ease-in-out;
 }
+<<<<<<< HEAD
 
 .field-edit input {
   flex: 1;
@@ -650,6 +651,15 @@
   from {
     opacity: 0;
     transform: translateY(-5px);
+=======
+.structured-view-link, .treatment-logs-link{
+  text-decoration: none;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+>>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
   }
   to {
     opacity: 1;

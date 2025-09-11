@@ -2,26 +2,26 @@ import "./StructuredView.css"
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useState } from "react";
-import petImg1 from "../../assets/images/pet-img1.jpg"
-import petImg2 from "../../assets/images/pet-img2.jpeg"
-import petImg3 from "../../assets/images/pet-img3.jpeg"
-import petImg4 from "../../assets/images/pet-img4.jpg"
-import petImg5 from "../../assets/images/pet-img5.jpg"
+import catImg1 from "../../assets/images/cat1.jpeg"
+import catImg2 from "../../assets/images/cat2.jpeg"
+import catImg3 from "../../assets/images/cat3.jpeg"
+import catImg4 from "../../assets/images/cat4.jpeg"
+import catImg5 from "../../assets/images/cat5.jpeg"
 
-const StructuredView = () => {
+const Cat = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const cards = [
     <div className="structured-view-card">
-      <div className="pet-img1"> <img src={petImg1} alt="pet1" className="pet-img1"/> </div>
+      <div className="pet-img1"> <img src={catImg1} alt="pet1" className="pet-img1"/> </div>
       <div className="pet-log-details1">
-        <div className="pet1"> <h3> Bella the Golden Retriever </h3> <hr/> </div>
-        <div className="pet-report1"> <h3> Parvovirus (Canine Parvo) </h3> </div>
-        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Vomiting, diarrhea, lethargy, loss of appetite and dehydration. <br/> <h3>Tests:</h3> Fecal ELISA test for parvovirus. </div>
+        <div className="pet1"> <h3> Luna the Siamese </h3> <hr/> </div>
+        <div className="pet-report1"> <h3> Feline Lower Urinary Tract Disease (FLUTD) </h3> </div>
+        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Straining to urinate, frequent urination, blood in urine, urinating outside litter box. <br/> <h3>Tests:</h3> Urinalysis. </div>
         <div className="pet-lab-results1"> <h3>Lab Results</h3>
           <ul>
-            <li>Positive for Parvovirus antigen in feces.</li>
-            <li>Elevated white blood cell count indicating infection.</li>
-            <li>Signs of dehydration in blood work.</li>
+            <li>Hematuria, crystals present, elevated pH</li>
+            <li>Positive for E. coli</li>
+            <li>Mildly elevated BUN/creatinine</li>
           </ul>
         </div>
         <div className="pet-past-treatment1"> <h3>Past Treatments: </h3>
@@ -41,11 +41,11 @@ const StructuredView = () => {
       </div>
     </div>,
     <div className="structured-view-card">
-      <div className="pet-img2"> <img src={petImg2} alt="pet2" className="pet-img2"/> </div>
-      <div className="pet-log-details1">
-        <div className="pet1"> <h3> Pluto the Pug </h3> <hr/> </div>
-        <div className="pet-report1"> <h3> Kennel Cough (Infectious Tracheobronchitis ) </h3> </div>
-        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Dry, hacking cough, gagging and mild fever. <br/> <h3>Tests:</h3> Physical exam </div>
+      <div className="cat-img2"> <img src={catImg2} alt="pet2" className="cat-img2"/> </div>
+      <div className="cat-log-details1">
+        <div className="pet1"> <h3> Oliver the Maine Coon </h3> <hr/> </div>
+        <div className="pet-report1"> <h3> Hypertrophic Cardiomyopathy (HCM)</h3> </div>
+        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Rapid breathing, lethargy, fainting, reduced appetite. <br/> <h3>Tests:</h3> Echocardiogram</div>
         <div className="pet-lab-results1"> <h3>Lab Results</h3>
           <ul>
             <li>Mild leukocytosis.</li>
@@ -69,11 +69,11 @@ const StructuredView = () => {
       </div>
     </div>,
     <div className="structured-view-card">
-      <div className="pet-img3"> <img src={petImg3} alt="pet3" className="pet-img3"/> </div>
+      <div className="cat-img3"> <img src={catImg3} alt="pet3" className="cat-img3"/> </div>
       <div className="pet-log-details1">
-        <div className="pet1"> <h3> Bailey the Beagle </h3> <hr/> </div>
-        <div className="pet-report1"> <h3> Canine Distemper </h3> </div>
-        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Fever, Nasal/Eye Discharge, coughing, seizures. <br/> <h3>Tests:</h3> PCR swab test. </div>
+        <div className="pet1"> <h3> Pepper the Persian </h3> <hr/> </div>
+        <div className="pet-report1"> <h3> Polycystic Kidney Disease (PKD) </h3> </div>
+        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Increased thirst, frequent urination, weight loss, poor coat condition. <br/> <h3>Tests:</h3> Ultrasound of kidneys. </div>
         <div className="pet-lab-results1"> <h3>Lab Results</h3>
           <ul>
             <li>Positive for Canine Distemper Virus though PCR test.</li>
@@ -98,11 +98,11 @@ const StructuredView = () => {
       </div>
     </div>,
     <div className="structured-view-card">
-      <div className="pet-img4"> <img src={petImg4} alt="pet4" className="pet-img4"/> </div>
+      <div className="pet-img4"> <img src={catImg4} alt="pet4" className="pet-img4"/> </div>
       <div className="pet-log-details1">
-        <div className="pet1"> <h3> Lucky the Golden Labrador </h3> <hr/> </div>
-        <div className="pet-report1"> <h3> Skin Allergies (Atopic Dermatitis) </h3> </div>
-        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Itching, Red skin, hair loss, licking paws. <br/> <h3>Tests:</h3> Allergy test or flea detection. </div>
+        <div className="pet1"> <h3> Max the British Shorthair </h3> <hr/> </div>
+        <div className="pet-report1"> <h3> Feline Diabetes Mellitus </h3> </div>
+        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Excessive thirst, frequent urination, weight loss despite normal appetite, lethargy. <br/> <h3>Tests:</h3> Fructosamine test. </div>
         <div className="pet-lab-results1"> <h3>Lab Results</h3>
           <ul>
             <li>Negative for skin scraping test.</li>
@@ -127,11 +127,11 @@ const StructuredView = () => {
       </div>
     </div>,
     <div className="structured-view-card">
-      <div className="pet-img5"> <img src={petImg5} alt="pet5" className="pet-img5"/> </div>
+      <div className="cat-img5"> <img src={catImg5} alt="pet5" className="cat-img5"/> </div>
       <div className="pet-log-details1">
-        <div className="pet1"> <h3> Loki the Labrador Retriever </h3> <hr/> </div>
-        <div className="pet-report1"> <h3> Ear Infenction (Otitis Externa) </h3> </div>
-        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Head shaking, odor from ears, scratching. <br/> <h3>Tests:</h3> Exam with otoscope, ear swab </div>
+        <div className="pet1"> <h3> Daisy the Ragdoll </h3> <hr/> </div>
+        <div className="pet-report1"> <h3> Feline Hyperthyroidism </h3> </div>
+        <div className="pet-diagnosis1"> <h3>Symptoms:</h3> Weight loss, increased appetite, hyperactivity, vomiting, diarrhea <br/> <h3>Tests:</h3> Blood test for thyroid hormone (T4) </div>
         <div className="pet-lab-results1"> <h3>Lab Results</h3>
           <ul>
             <li>Presence of Malassezia pachydermatis.</li>
@@ -192,4 +192,4 @@ const StructuredView = () => {
   )
 }
 
-export default StructuredView;
+export default Cat;
