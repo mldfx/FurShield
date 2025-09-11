@@ -14,6 +14,11 @@ import StructuredView from "./components/medical/StructuredView"
 import Cat from "./components/medical/cat"
 import Fish from "./components/medical/fish"
 import Other from "./components/medical/other"
+import ProductCatalog from "./pages/ProductCatalog"
+import HealthRecords from "./components/petowner/HealthRecords"
+import HealthTimeline from "./components/petowner/HealthTimeline"
+import DocumentUpload from "./components/petowner/DocumentUpload"
+
 
 function App() {
   return (
@@ -33,6 +38,10 @@ function App() {
         <Route path="/cat" element={<Cat />} />
         <Route path="/fish" element={<Fish />} />
         <Route path="/other" element={<Other />} />
+        <Route path="/catalog" element={<ProductCatalog />} />
+        <Route path="/health-records" element={<HealthRecords />} />
+        <Route path="/health-timeline" element={<HealthTimeline />} />
+        <Route path="/document-upload" element={<DocumentUpload />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
