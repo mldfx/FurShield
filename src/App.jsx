@@ -20,6 +20,7 @@ import HealthTimeline from "./components/petowner/HealthTimeline"
 import DocumentUpload from "./components/petowner/DocumentUpload"
 
 
+
 function App() {
   return (
     <div className="App">
@@ -39,9 +40,9 @@ function App() {
         <Route path="/fish" element={<Fish />} />
         <Route path="/other" element={<Other />} />
         <Route path="/catalog" element={<ProductCatalog />} />
-        <Route path="/health-records" element={<HealthRecords />} />
-        <Route path="/health-timeline" element={<HealthTimeline />} />
-        <Route path="/document-upload" element={<DocumentUpload />} />
+        <Route path="/dashboard/health-records" element={<HealthRecords />} />
+        <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
+        <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
