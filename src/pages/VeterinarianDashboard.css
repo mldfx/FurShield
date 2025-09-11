@@ -57,7 +57,9 @@
   border-radius: calc(var(--radius) - 2px);
   border: 1px dashed var(--border);
 }
-
+.structured-view-link, .treatment-logs-link{
+  text-decoration: none;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .dashboard-header h1 {

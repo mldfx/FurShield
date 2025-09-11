@@ -1,3 +1,4 @@
+import { Link } from "lucide-react"
 import DashboardNavbar from "../components/DashboardNavbar"
 import "./VeterinarianDashboard.css"
 
@@ -34,25 +35,29 @@ const VeterinarianDashboard = () => {
               </div>
             </div>
 
-            <div className="dashboard-card">
-              <h3>🐾 Patient Records</h3>
-              <p>Pet medical history will be implemented here</p>
-              <div className="placeholder-text">
-                • View pet medical history
-                <br />• Access booked pets' data
-                <br />• Patient information overview
+            <a href="/structured-view" className="structured-view-link">
+              <div className="dashboard-card">
+                <h3>🐾 Patient Records</h3>
+                <p>Pet medical history will be implemented here</p>
+                <div className="placeholder-text">
+                  • View pet medical history
+                  <br />• Access booked pets' data
+                  <br />• Patient information overview
+                </div>
               </div>
-            </div>
+            </a>
 
-            <div className="dashboard-card">
-              <h3>📝 Treatment Logs</h3>
-              <p>Treatment logging will be implemented here</p>
-              <div className="placeholder-text">
-                • Log treatments & observations
-                <br />• Diagnosis and medication records
-                <br />• Follow-up action plans
+            <a href="/treatment-log" className="treatment-logs-link">
+              <div className="dashboard-card">
+                <h3>📝 Treatment Logs</h3>
+                <p>Treatment logging will be implemented here</p>
+                <div className="placeholder-text">
+                  • Log treatments & observations
+                  <br />• Diagnosis and medication records
+                  <br />• Follow-up action plans
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

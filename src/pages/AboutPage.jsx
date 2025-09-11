@@ -87,14 +87,14 @@ export default function AboutPage() {
             </div>
             <div className="team-member">
               <div className="member-info">
-                <h3>Gbebmi</h3>
+                <h3>Gbebemi</h3>
                 <p>Medical Records Specialist</p>
                 <p>Focuses on treatment logs, medical history, and structured health data.</p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
-                <h3>Clienton</h3>
+                <h3>Clinton</h3>
                 <p>Pet Owner Experience Lead</p>
                 <p>Develops health tracking, insurance management, and owner dashboard features.</p>
               </div>
