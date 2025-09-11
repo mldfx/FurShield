@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import FeedbackPage from "./pages/FeedbackPage"
 import "./App.css"
+import PetMedicalHistory from "./components/vet/PetMedicalHistory"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/vethistory" element={<PetMedicalHistory />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>

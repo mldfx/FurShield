@@ -1,6 +1,52 @@
 /* Enny - Veterinarian Profile Management Styles */
 /* TODO: Add styles for vet profile management interface */
 
+/* Main profile box */
+.vet-profile-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .vet-profile {
-  /* Add your styles here */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  max-height: 700px;
+  padding: 0.7rem;
+}
+
+/* Profile heading */
+.profile-title {
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Profile image box */
+.vet-profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  height: 250px;
+}
+.vet-picture {
+  width: 121px;
+  height: 121px;
+  border-radius: 100%;
+  background-color: orange;
+}
+.vet-picture img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+.editprofile {
+  display: flex;
+  gap: 2px;
 }
