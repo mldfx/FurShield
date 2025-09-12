@@ -6,7 +6,9 @@
 .dashboard-content {
   padding: 2rem 0;
 }
-
+.pet-link {
+  text-decoration: none;
+}
 .dashboard-header {
   text-align: center;
   margin-bottom: 3rem;

@@ -1,31 +1,22 @@
 // src/Mypet.jsx
-import React, { useState, useRef, useEffect } from 'react';
-import './Mypet.css';
+import { Link } from "react-router";
+import React, { useState, useRef, useEffect } from "react";
+import "./Mypet.css";
 
 const Mypet = () => {
   const [pets, setPets] = useState(() => {
-    const saved = localStorage.getItem('mypet_pets');
+    const saved = localStorage.getItem("mypet_pets");
     return saved ? JSON.parse(saved) : [];
   });
-  
+
   const [selectedPetId, setSelectedPetId] = useState(null);
   const [isAddingPet, setIsAddingPet] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const imageUploadRef = useRef(null);
 
-  // Species & Breed Options
-  const speciesOptions = ['Dog', 'Cat', 'Bird', 'Rabbit', 'Other'];
-  const breedOptions = {
-    Dog: ['Labrador', 'Poodle', 'Beagle', 'Bulldog', 'Golden Retriever', 'Other'],
-    Cat: ['Siamese', 'Persian', 'Maine Coon', 'Ragdoll', 'Bengal', 'Other'],
-    Bird: ['Parrot', 'Canary', 'Finch', 'Cockatiel', 'Other'],
-    Rabbit: ['Lop', 'Dutch', 'Angora', 'Flemish Giant', 'Other'],
-    Other: ['Other']
-  };
-
   // Save to localStorage whenever pets change
   useEffect(() => {
-    localStorage.setItem('mypet_pets', JSON.stringify(pets));
+    localStorage.setItem("mypet_pets", JSON.stringify(pets));
   }, [pets]);
 
   // Handle Add or Edit Pet
@@ -33,18 +24,20 @@ const Mypet = () => {
     const newPet = {
       id: petData.id || Date.now(),
       name: petData.name.trim(),
-      species: petData.species,
+      animal: petData.animal,
       breed: petData.breed,
       age: petData.age,
-      notes: petData.notes || '',
-      imageUrl: imageUrl || petData.imageUrl || '',
-      createdAt: petData.id ? pets.find(p => p.id === petData.id)?.createdAt : new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      notes: petData.notes || "",
+      imageUrl: imageUrl || petData.imageUrl || "",
+      createdAt: petData.id
+        ? pets.find((p) => p.id === petData.id)?.createdAt
+        : new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     };
 
     if (petData.id) {
       // Edit existing
-      setPets(pets.map(p => p.id === petData.id ? newPet : p));
+      setPets(pets.map((p) => (p.id === petData.id ? newPet : p)));
     } else {
       // Add new
       setPets([...pets, newPet]);
@@ -57,8 +50,12 @@ const Mypet = () => {
 
   // Delete Pet
   const handleDeletePet = (petId) => {
-    if (window.confirm('Are you sure you want to delete this pet? This cannot be undone.')) {
-      setPets(pets.filter(p => p.id !== petId));
+    if (
+      window.confirm(
+        "Are you sure you want to delete this pet? This cannot be undone."
+      )
+    ) {
+      setPets(pets.filter((p) => p.id !== petId));
       if (selectedPetId === petId) {
         setSelectedPetId(pets.length > 1 ? pets[0].id : null);
       }
@@ -80,31 +77,38 @@ const Mypet = () => {
   const PetForm = ({ initialData = {} }) => {
     const [formData, setFormData] = useState({
       id: initialData.id || null,
-      name: initialData.name || '',
-      species: initialData.species || 'Dog',
-      breed: initialData.breed || '',
-      age: initialData.age || '',
-      notes: initialData.notes || '',
-      imageUrl: initialData.imageUrl || ''
+      name: initialData.name || "",
+      species: initialData.species || "",
+      breed: initialData.breed || "",
+      age: initialData.age || "",
+      notes: initialData.notes || "",
+      imageUrl: initialData.imageUrl || "",
     });
-    const [imagePreview, setImagePreview] = useState(initialData.imageUrl || '');
+    const [imagePreview, setImagePreview] = useState(
+      initialData.imageUrl || ""
+    );
 
     const handleInputChange = (e) => {
       const { name, value } = e.target;
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleImageChange = (e) => {
       const uploadedUrl = handleImageUpload(e, setImagePreview);
       if (uploadedUrl) {
-        setFormData(prev => ({ ...prev, imageUrl: '' }));
+        setFormData((prev) => ({ ...prev, imageUrl: "" }));
       }
     };
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (!formData.name || !formData.species || !formData.age) {
-        alert('Please fill in all required fields.');
+      if (
+        !formData.name ||
+        !formData.species ||
+        !formData.age ||
+        !formData.breed
+      ) {
+        alert("Please fill in all required fields.");
         return;
       }
       handleSavePet(formData, imagePreview);
@@ -113,7 +117,7 @@ const Mypet = () => {
     return (
       <div className="mypet-modal-overlay">
         <div className="mypet-modal-content">
-          <h3>{initialData.id ? 'Edit Pet Profile' : 'Add New Pet'}</h3>
+          <h3>{initialData.id ? "Edit Pet Profile" : "Add New Pet"}</h3>
           <form onSubmit={handleSubmit} className="mypet-pet-form">
             <div className="mypet-form-group">
               <label>Pet Name *</label>
@@ -129,30 +133,26 @@ const Mypet = () => {
 
             <div className="mypet-form-group">
               <label>Species *</label>
-              <select
+              <input
+                type="text"
                 name="species"
                 value={formData.species}
                 onChange={handleInputChange}
                 required
-              >
-                {speciesOptions.map(species => (
-                  <option key={species} value={species}>{species}</option>
-                ))}
-              </select>
+                placeholder="e.g., Dog, Cat, Parrot, Hamster, Iguana"
+              />
             </div>
 
             <div className="mypet-form-group">
               <label>Breed *</label>
-              <select
+              <input
+                type="text"
                 name="breed"
                 value={formData.breed}
                 onChange={handleInputChange}
                 required
-              >
-                {(breedOptions[formData.species] || []).map(breed => (
-                  <option key={breed} value={breed}>{breed}</option>
-                ))}
-              </select>
+                placeholder="e.g., Beagle, Persian, Custom breed"
+              />
             </div>
 
             <div className="mypet-form-group">
@@ -183,31 +183,35 @@ const Mypet = () => {
               <label>Profile Picture</label>
               <div className="mypet-image-upload-area">
                 {imagePreview && (
-                  <img src={imagePreview} alt="Preview" className="mypet-image-preview" />
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    className="mypet-image-preview"
+                  />
                 )}
                 <input
                   type="file"
                   ref={imageUploadRef}
                   accept="image/*"
                   onChange={handleImageChange}
-                  style={{ display: 'none' }}
+                  style={{ display: "none" }}
                 />
                 <button
                   type="button"
                   className="mypet-btn-secondary"
                   onClick={() => imageUploadRef.current?.click()}
                 >
-                  {imagePreview ? 'Change Photo' : 'Upload Photo'}
+                  {imagePreview ? "Change Photo" : "Upload Photo"}
                 </button>
                 {imagePreview && (
                   <button
                     type="button"
                     className="mypet-btn-delete"
                     onClick={() => {
-                      setImagePreview('');
-                      setFormData(prev => ({ ...prev, imageUrl: '' }));
+                      setImagePreview("");
+                      setFormData((prev) => ({ ...prev, imageUrl: "" }));
                     }}
-                    style={{ marginTop: '0.5rem' }}
+                    style={{ marginTop: "0.5rem" }}
                   >
                     Remove Photo
                   </button>
@@ -217,14 +221,14 @@ const Mypet = () => {
 
             <div className="mypet-form-actions">
               <button type="submit" className="mypet-btn-primary">
-                {initialData.id ? 'Update Pet' : 'Add Pet'}
+                {initialData.id ? "Update Pet" : "Add Pet"}
               </button>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => {
                   setIsAddingPet(false);
                   setIsEditing(false);
-                }} 
+                }}
                 className="mypet-btn-secondary"
               >
                 Cancel
@@ -251,16 +255,24 @@ const Mypet = () => {
         </div>
         <div className="mypet-pet-card-info">
           <h3>{pet.name}</h3>
-          <p><strong>Species:</strong> {pet.species}</p>
-          <p><strong>Breed:</strong> {pet.breed}</p>
-          <p><strong>Age:</strong> {pet.age} years</p>
+          <p>
+            <strong>Animal:</strong> {pet.animal}
+          </p>
+          <p>
+            <strong>Breed:</strong> {pet.breed}
+          </p>
+          <p>
+            <strong>Age:</strong> {pet.age} years
+          </p>
           {pet.notes && (
             <div className="mypet-pet-notes">
-              <p><strong>Notes:</strong> {pet.notes}</p>
+              <p>
+                <strong>Notes:</strong> {pet.notes}
+              </p>
             </div>
           )}
           <div className="mypet-pet-actions">
-            <button 
+            <button
               onClick={() => {
                 setIsEditing(true);
                 setIsAddingPet(true);
@@ -270,7 +282,7 @@ const Mypet = () => {
             >
               Edit
             </button>
-            <button 
+            <button
               onClick={() => handleDeletePet(pet.id)}
               className="mypet-btn-delete"
             >
@@ -291,7 +303,11 @@ const Mypet = () => {
         <div className="mypet-profile-header">
           <div className="mypet-profile-image-large">
             {pet.imageUrl ? (
-              <img src={pet.imageUrl} alt={pet.name} className="mypet-profile-img-large" />
+              <img
+                src={pet.imageUrl}
+                alt={pet.name}
+                className="mypet-profile-img-large"
+              />
             ) : (
               <div className="mypet-placeholder-image-large">
                 <span>{pet.name.charAt(0)}</span>
@@ -301,12 +317,24 @@ const Mypet = () => {
           <div className="mypet-profile-details">
             <h2>{pet.name}</h2>
             <div className="mypet-profile-meta">
-              <p><strong>Species:</strong> {pet.species}</p>
-              <p><strong>Breed:</strong> {pet.breed}</p>
-              <p><strong>Age:</strong> {pet.age} years</p>
-              <p><strong>Added:</strong> {new Date(pet.createdAt).toLocaleDateString()}</p>
+              <p>
+                <strong>Animal:</strong> {pet.animal}
+              </p>
+              <p>
+                <strong>Breed:</strong> {pet.breed}
+              </p>
+              <p>
+                <strong>Age:</strong> {pet.age} years
+              </p>
+              <p>
+                <strong>Added:</strong>{" "}
+                {new Date(pet.createdAt).toLocaleDateString()}
+              </p>
               {pet.updatedAt && pet.updatedAt !== pet.createdAt && (
-                <p><strong>Last Updated:</strong> {new Date(pet.updatedAt).toLocaleDateString()}</p>
+                <p>
+                  <strong>Last Updated:</strong>{" "}
+                  {new Date(pet.updatedAt).toLocaleDateString()}
+                </p>
               )}
             </div>
             {pet.notes && (
@@ -316,7 +344,7 @@ const Mypet = () => {
               </div>
             )}
             <div className="mypet-profile-actions">
-              <button 
+              <button
                 onClick={() => {
                   setIsEditing(true);
                   setIsAddingPet(true);
@@ -326,7 +354,7 @@ const Mypet = () => {
               >
                 Edit Profile
               </button>
-              <button 
+              <button
                 onClick={() => handleDeletePet(pet.id)}
                 className="mypet-btn-delete"
               >
@@ -339,7 +367,7 @@ const Mypet = () => {
     );
   };
 
-  const selectedPet = pets.find(p => p.id === selectedPetId);
+  const selectedPet = pets.find((p) => p.id === selectedPetId);
 
   return (
     <div className="mypet-app">
@@ -350,12 +378,12 @@ const Mypet = () => {
 
       <main className="mypet-app-main">
         <div className="mypet-actions-bar">
-          <button 
+          <button
             onClick={() => {
               setIsAddingPet(true);
               setIsEditing(false);
               setSelectedPetId(null);
-            }} 
+            }}
             className="mypet-btn-primary"
           >
             + Add New Pet
@@ -371,10 +399,12 @@ const Mypet = () => {
         ) : (
           <>
             <div className="mypet-pets-grid">
-              {pets.map(pet => (
-                <div 
-                  key={pet.id} 
-                  className={`mypet-pet-tile ${selectedPetId === pet.id ? 'selected' : ''}`}
+              {pets.map((pet) => (
+                <div
+                  key={pet.id}
+                  className={`mypet-pet-tile ${
+                    selectedPetId === pet.id ? "selected" : ""
+                  }`}
                   onClick={() => setSelectedPetId(pet.id)}
                 >
                   <div className="mypet-pet-tile-image">
@@ -388,7 +418,9 @@ const Mypet = () => {
                   </div>
                   <div className="mypet-pet-tile-info">
                     <h4>{pet.name}</h4>
-                    <p>{pet.breed}, {pet.age} yrs</p>
+                    <p>
+                      {pet.breed}, {pet.age} yrs
+                    </p>
                   </div>
                 </div>
               ))}
@@ -399,14 +431,17 @@ const Mypet = () => {
         )}
 
         {isAddingPet && (
-          <PetForm 
-            initialData={isEditing && selectedPet ? selectedPet : {}} 
-          />
+          <PetForm initialData={isEditing && selectedPet ? selectedPet : {}} />
         )}
       </main>
-
+      <Link to="/dashboard/pet-owners">
+        <button className="back-btns">⟵ Back to Dashboard</button>
+      </Link>
       <footer className="mypet-app-footer">
-        <p>© {new Date().getFullYear()} MyPet Profiles • Keep track of your beloved companions</p>
+        <p>
+          © {new Date().getFullYear()} MyPet Profiles • Keep track of your
+          beloved companions
+        </p>
       </footer>
     </div>
   );

@@ -15,15 +15,17 @@ const PetOwnerDashboard = () => {
           </div>
 
           <div className="dashboard-grid">
-            <div className="dashboard-card">
-              <h3>🐕 My Pets</h3>
-              <p>Pet profile management will be implemented here</p>
-              <div className="placeholder-text">
-                • Add/Edit/Delete/View pets
-                <br />• Pet information and photos
-                <br />• Breed and age tracking
+            <Link to="/dashboard/my-pets" className="pet-link">
+              <div className="dashboard-card">
+                <h3>🐕 My Pets</h3>
+                <p>Pet profile management will be implemented here</p>
+                <div className="placeholder-text">
+                  • Add/Edit/Delete/View pets
+                  <br />• Pet information and photos
+                  <br />• Breed and age tracking
+                </div>
               </div>
-            </div>
+            </Link>
 
             <Link to="/dashboard/health-records">
               <div className="dashboard-card">

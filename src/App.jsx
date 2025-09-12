@@ -15,11 +15,12 @@ import Cat from "./components/medical/cat";
 import Fish from "./components/medical/fish";
 import Other from "./components/medical/other";
 import ProductCatalog from "./pages/ProductCatalog";
+import MyPet from "./components/petowner/Mypet";
 import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import DocumentUpload from "./components/petowner/DocumentUpload";
 import CareOptions from "./components/care/CareOptions";
-import Mypet from "./components/petowner/Mypet"
+import Mypet from "./components/petowner/Mypet";
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
-        <Route path="/dashboard/my-pet" element={<Mypet />} />
+        <Route path="/dashboard/my-pets" element={<MyPet />} />
+        <Route path="/dashboard/pet-owners" element={<PetOwnerDashboard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
