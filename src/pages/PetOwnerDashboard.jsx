@@ -72,7 +72,7 @@ const PetOwnerDashboard = () => {
                 </div>
               </div>
             </Link>
-
+            <Link to={"/dashboard/appointments"}>
             <div className="dashboard-card">
               <h3>📅 Appointments</h3>
               <p>Appointment booking system will be implemented here</p>
@@ -82,7 +82,7 @@ const PetOwnerDashboard = () => {
                 <br />• Appointment history
               </div>
             </div>
-
+            </Link>
             <div className="dashboard-card">
               <h3>📚 Care Resources</h3>
               <p>Pet care information will be implemented here</p>

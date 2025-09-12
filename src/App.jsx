@@ -18,6 +18,8 @@ import ProductCatalog from "./pages/ProductCatalog"
 import HealthRecords from "./components/petowner/HealthRecords"
 import HealthTimeline from "./components/petowner/HealthTimeline"
 import DocumentUpload from "./components/petowner/DocumentUpload"
+import PetAppointment from "./components/petowner/petappointment"
+
 
 
 
@@ -43,6 +45,7 @@ function App() {
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
+        <Route path="/dashboard/appointments" element={<PetAppointment />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
