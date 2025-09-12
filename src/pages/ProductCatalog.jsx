@@ -561,7 +561,10 @@ const ProductCatalog = () => {
                   onClick={() => setSelectedCategory(category.id)}
                 >
                   <span className="category-icon">{category.icon}</span>
-                  {category.name}
+                  <span className="category-name">{category.name}</span>
+                  {selectedCategory === category.id && (
+                    <span className="category-selected-indicator" aria-label="Selected">✔️</span>
+                  )}
                 </button>
               ))}
             </div>

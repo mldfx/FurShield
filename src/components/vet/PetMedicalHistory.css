@@ -2,5 +2,197 @@
 /* TODO: Add styles for pet medical history interface */
 
 .pet-medical-history {
-  /* Add your styles here */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pet-history-box a {
+  text-decoration: none;
+}
+.pet-history-box {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
+  padding: 16px;
+}
+
+/* Pet History Header */
+.pet-history-box-header, .pet-history-pet {
+  display: flex;
+}
+.pet-history-box-header {
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+.pet-history-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pet-history-nav button {
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.add-rec-to-history {
+  color: #fff;
+  background-color: var(--primary);
+  transition: background-color 0.4s ease-in;
+}
+.add-rec-to-history:hover {
+  background-color: #04815a;
+}
+.pet-history-nav a{
+  color: #000;
+}
+.pet-history-nav a button {
+  transition: background-color 0.4s ease-in;
+}
+.pet-history-nav a button:hover {
+  background-color: #dfdbdb;
+}
+.pet-history-pet {
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+  max-height: 350px;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: -1px 1px 2px 1px rgba(143, 143, 143, 0.4);
+}
+.pet-history-img {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 60px;
+}
+.pet-history-img img {
+  border-radius: 60px;
+}
+/* The history container main content */
+.pet-history-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.pet-history-contents > div {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Timeline Scroll */
+.pet-history-timeline .timeline-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Timeline Entry */
+.timeline-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border-left: 4px solid var(--primary);
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.entry-icon {
+  margin-top: 2px;
+  color: var(--primary);
+}
+
+.entry-details {
+  flex: 1;
+}
+
+.entry-date {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.timeline-entry p {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Type-specific colors */
+.timeline-entry.vaccination {
+  border-left-color: #4ade80;
+}
+
+.timeline-entry.milestone {
+  border-left-color: #60a5fa;
+}
+
+.timeline-entry.treatment {
+  border-left-color: #fbbf24;
+}
+
+.timeline-entry.adoption {
+  border-left-color: #f472b6;
+}
+
+.timeline-entry.illness {
+  border-left-color: #f87171;
+}
+
+/* Owner & Allergy Sections */
+.pet-history-owner-details p,
+.pet-history-allergies li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.pet-history-allergies ul {
+  padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .pet-history-contents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .pet-history-timeline {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  .pet-history-owner-details {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .pet-history-allergies {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
 }

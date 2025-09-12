@@ -1,62 +1,657 @@
 .veterinarian-dashboard {
-  min-height: 100vh;
   background-color: var(--muted);
 }
-
-.dashboard-content {
-  padding: 2rem 0;
+.vet-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-.dashboard-header {
+.vet-dashboard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+.vet-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.extra-patient-link-vet {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+.extra-patient-link-vet a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+.extra-patient-link-vet a:hover::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  background-color: var(--secondary);
+  animation: underTextHover 0.3s ease-in;
+}
+@keyframes underTextHover {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* Welcome Card (Hero) */
+.welcome-card-vet {
+  background: var(--primary);
+  color: #d46a42;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
   text-align: center;
-  margin-bottom: 3rem;
+  width: 90%;
+  height: 40vh;
+  max-height: 400px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.35),
+               0 0 3px rgba(0,0,0,0.2);
+  box-shadow: 5px 7px 6px rgba(0, 0, 0, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+.welcome-content-vet{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+.vet-welcome-image {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.vet-welcome-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.welcome-card-vet .welcome-content-vet {
+    padding: 0.8rem;
+  flex: 1;
 }
 
-.dashboard-header h1 {
-  color: var(--primary);
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.welcome-card-vet .welcome-content-vet h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-.dashboard-header p {
-  color: var(--muted-foreground);
-  font-size: 1.1rem;
+.welcome-card-vet .welcome-content-vet p {
+  font-size: 0.95rem; 
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  text-align: end;
+}
+.vet-profile-info-sect {
+  width: 100%;
+}
+.vet-dashsect-h1 {
+  width: 90%;
+  margin: auto;
+}
+.vet-info-card {
+      width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+}
+.vet-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack content and dropdown vertically */
+  align-items: center;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.vet-info-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.dashboard-card {
-  background-color: var(--card);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid var(--secondary);
+.vet-info-content:hover {
+  background-color: #f5f5f5;
 }
 
-.dashboard-card h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+.vet-info-icon {
+  padding: 5px 5px 5px 0;
+  font-size: 18px;
 }
 
-.dashboard-card p {
-  color: var(--muted-foreground);
-  margin-bottom: 1rem;
+.vet-info label {
+  font-weight: 500;
 }
 
-.placeholder-text {
-  color: var(--muted-foreground);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  background-color: var(--muted);
-  padding: 1rem;
-  border-radius: calc(var(--radius) - 2px);
-  border: 1px dashed var(--border);
+/* Dropdown Edit Section */
+.field-edit {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  animation: slideDown 0.3s ease-in-out;
 }
+<<<<<<< HEAD
+
+.field-edit input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.field-edit button {
+  padding: 6px 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.field-edit button:hover {
+  background-color: #005fa3;
+}
+.specialization-dropdown {
+  width: 100%;
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-in-out;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-option {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-option:hover {
+  background-color: var(--secondary);
+  color: var(--primary-foreground);
+}
+
+.dropdown-option.selected {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+/* Specialization */
+
+/* Years of experience */
+.vet-dash-sect {
+  width: 100%;
+}
+.vet-occupation {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  height: max-content;
+  gap: 15px;
+}
+.experience-card {
+  color: var(--popover-foreground);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(230, 107, 107, 0.1);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease;
+  position: relative;
+  width: min(80%, 300px);
+  height: min(30vh, 250px);
+  z-index: 1;
+}
+.vet-experience-content {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap: 5px;
+  align-items: center;
+}
+.vet-experience-content p {
+  font-weight: 600;
+}
+.vet-experience-card, .vet-exp-icon {
+  position: absolute;
+}
+.vet-exp-icon {
+  top: 3px;
+  z-index: 4;
+}
+.vet-exp-icon svg {
+  fill: var(--secondary);
+}
+.vet-experience-card {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+.vet-experience-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.experience-card:hover {
+  transform: scale(1.02);
+}
+
+
+
+.modal-card-vet {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.year-scroll {
+  overflow-y: auto;
+  max-height: 300px;
+  padding-right: 6px;
+}
+
+.year-option {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.year-option:hover {
+  background-color: var(--secondary);
+  color: var(--primary-foreground);
+}
+
+.year-option.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: bold;
+}
+
+.specialization-dropdown {
+  width: 100%;
+  overflow-y: auto;
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: dropdownFade 0.3s ease-in-out;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Availability Section */
+.vet-appointments-sect {
+  width: 90%;
+}
+.vet-no-availaility {
+  width: min(90%, 500px);
+  height: auto;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  position: relative;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vet-no-avial-tag {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.vet-no-avial-tag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  border-radius: 10px;
+}
+
+.no-vet-avail {
+  z-index: 2;
+  position: relative;
+  padding: 10px 0;
+}
+
+.no-vet-avail p {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.avail-slot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.avail-slot-list.expanded {
+  max-height: none;
+}
+
+.avail-slot-card {
+  background-color: #ffffff;
+  border-left: 4px solid var(--primary);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.avail-slot-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.avail-slot-card strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+.avail-slot-card p {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-top: 4px;
+}
+
+.avail-slot-card button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* Add to list button */
+.add-to-available-list {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 2px solid var(--primary);
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  position: absolute;
+  z-index: 4;
+  bottom: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.add-to-available-list:hover {
+  transform: scale(1.05);
+}
+
+.modal-overlay-vet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 41, 55, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
+.modal-card-vet {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.modal-card-vet h4 {
+  font-size: 18px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.modal-card-vet input[type="text"],
+.modal-card-vet input[type="time"] {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.time-slider {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.modal-card-vet button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-card-vet button:hover {
+  background-color: #047857;
+}
+
+/* View More Button */
+.view-more-btn {
+  background-color: var(--secondary);
+  color: var(--popover-foreground);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Appointments */
+.appointment-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.appointment-section-vet h3 {
+  margin-bottom: 10px;
+}
+.filter-btn {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--secondary);
+  color: var(--primary-foreground);
+}
+
+.filter-btn.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+}
+
+.appointment-card-vetd-link {
+  text-decoration: none;
+  outline: none;
+}
+
+.appointment-card-vetd {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.appointment-card-vetd:hover {
+  transform: scale(1.01);
+}
+
+.appointment-info h4 {
+  font-size: 18px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.appointment-info p {
+  font-size: 15px;
+  color: #374151;
+  margin: 4px 0;
+}
+
+.appointment-actions-vetd {
+  display: flex;
+  gap: 8px;
+}
+
+.status-tag {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.appointment-card-vetd.pending .status-tag {
+  background-color: #facc15;
+  color: #78350f;
+}
+
+.appointment-card-vetd.approved .status-tag {
+  background-color: #4ade80;
+  color: #065f46;
+}
+
+.appointment-card-vetd.rescheduled .status-tag {
+  background-color: #60a5fa;
+  color: #1e3a8a;
+}
+
+.appointment-actions-vetd button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.appointment-actions-vetd button:hover {
+  background-color: #047857;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+=======
 .structured-view-link, .treatment-logs-link{
   text-decoration: none;
 }
@@ -64,9 +659,47 @@
 @media (max-width: 768px) {
   .dashboard-header h1 {
     font-size: 2rem;
+>>>>>>> 7e84994465e4d32bfe0dbefc3e1b5f1fe5668333
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Smooth dropdown animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media screen and (min-width: 500px) {
+  .field-edit {
+    width: 70%; 
   }
 
-  .dashboard-grid {
-    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 700px) {
+  .vet-info-card {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: auto;
+    align-items: start;
+  }
+  .vet-info:nth-of-type(5) {
+    grid-column: 1/3;
   }
 }
