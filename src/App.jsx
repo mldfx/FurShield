@@ -19,6 +19,7 @@ import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import DocumentUpload from "./components/petowner/DocumentUpload";
 import CareOptions from "./components/care/CareOptions";
+import Mypet from "./components/petowner/Mypet"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
+        <Route path="/dashboard/my-pet" element={<Mypet />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
