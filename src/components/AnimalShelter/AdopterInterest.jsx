@@ -113,21 +113,21 @@ const AdopterInterest = () => {
 
       {/* Application Statistics */}
       <div className="stats-grid" style={{ marginBottom: "2rem" }}>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{applications.filter((app) => app.status === "Under Review").length}</div>
-          <div className="stat-label">Under Review</div>
+          <div className="stat-labels">Under Review</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{applications.filter((app) => app.status === "Pending Interview").length}</div>
-          <div className="stat-label">Pending Interview</div>
+          <div className="stat-labels">Pending Interview</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{applications.filter((app) => app.status === "Approved").length}</div>
-          <div className="stat-label">Approved</div>
+          <div className="stat-labels">Approved</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{applications.filter((app) => app.status === "Rejected").length}</div>
-          <div className="stat-label">Rejected</div>
+          <div className="stat-labels">Rejected</div>
         </div>
       </div>
 

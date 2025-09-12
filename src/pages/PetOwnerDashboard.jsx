@@ -15,15 +15,17 @@ const PetOwnerDashboard = () => {
           </div>
 
           <div className="dashboard-grid">
-            <div className="dashboard-card">
-              <h3>🐕 My Pets</h3>
-              <p>Pet profile management will be implemented here</p>
-              <div className="placeholder-text">
-                • Add/Edit/Delete/View pets
-                <br />• Pet information and photos
-                <br />• Breed and age tracking
+            <Link to="/dashboard/my-pet" className="pet-link">
+              <div className="dashboard-card">
+                <h3>🐕 My Pets</h3>
+                <p>Pet profile management will be implemented here</p>
+                <div className="placeholder-text">
+                  • Add/Edit/Delete/View pets
+                  <br />• Pet information and photos
+                  <br />• Breed and age tracking
+                </div>
               </div>
-            </div>
+            </Link>
 
             <Link to="/dashboard/health-records" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
@@ -72,16 +74,18 @@ const PetOwnerDashboard = () => {
                 </div>
               </div>
             </Link>
-
-            <div className="dashboard-card">
-              <h3>📅 Appointments</h3>
-              <p>Appointment booking system will be implemented here</p>
-              <div className="placeholder-text">
-                • Book vet appointments
-                <br />• View upcoming visits
-                <br />• Appointment history
+            <Link to="/dashboard/pet-appointment" className="pet-owner-dashboard-link">
+              <div className="dashboard-card">
+                <h3>📅 Appointments</h3>
+                {/* <p>Appointment booking system will be implemented here</p> */}
+                <p>Implementation of Appointments</p>
+                <div className="placeholder-text">
+                  • Book vet appointments
+                  <br />• View upcoming visits
+                  <br />• Appointment history
+                </div>
               </div>
-            </div>
+            </Link>
 
             <Link to="/dashboard/care-resources" className="pet-owner-dashboard-link">
               <div className="dashboard-card">

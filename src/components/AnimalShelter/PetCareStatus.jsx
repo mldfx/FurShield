@@ -338,31 +338,31 @@ const PetCareStatus = () => {
 
       {/* Quick Stats */}
       <div className="stats-grid" style={{ marginTop: "2rem" }}>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">
             {
               careRecords.filter((r) => r.status === "Completed" && r.date === new Date().toISOString().split("T")[0])
                 .length
             }
           </div>
-          <div className="stat-label">Today's Completed</div>
+          <div className="stat-labels">Today's Completed</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{careRecords.filter((r) => r.status === "Scheduled").length}</div>
-          <div className="stat-label">Scheduled Tasks</div>
+          <div className="stat-labels">Scheduled Tasks</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">{careRecords.filter((r) => r.type === "Medical").length}</div>
-          <div className="stat-label">Medical Records</div>
+          <div className="stat-labels">Medical Records</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-cards">
           <div className="stat-number">
             {
               careRecords.filter((r) => r.type === "Feeding" && r.date === new Date().toISOString().split("T")[0])
                 .length
             }
           </div>
-          <div className="stat-label">Today's Feedings</div>
+          <div className="stat-labels">Today's Feedings</div>
         </div>
       </div>
     </div>

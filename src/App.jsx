@@ -15,6 +15,7 @@ import ProductCatalog from "./pages/ProductCatalog";
 import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import DocumentUpload from "./components/petowner/DocumentUpload";
+import PetAppointment from "./components/petowner/petappointment";
 import InsuranceManagement from "./components/petowner/InsuranceManagement";
 import CareOptions from "./components/care/CareOptions";
 import Mypet from "./components/petowner/Mypet";
@@ -23,7 +24,6 @@ import Sidebar from "./components/AnimalShelter/Sidebar";
 import PetProfiles from "./components//AnimalShelter/PetProfiles";
 import PetCareStatus from "./components//AnimalShelter/PetCareStatus";
 import AdopterInterest from "./components//AnimalShelter/AdopterInterest";
-// import Dashboard from "./components/SDashboard";
 
 import "./App.css";
 
@@ -53,20 +53,18 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route path="/dashboard/veterinarian" element={<VeterinarianDashboard />} />
-        <Route path="/dashboard/shelter" element={<ShelterDashboard />} />
-        <Route path="/dashboard/veterinarian" element={<VeterinarianDashboard />} />
         {/* <Route path="/dashboard/shelter" element={<ShelterDashboard />} />
          */}
 
         <Route
-  path="/dashboard/shelter"
-  element={
-    <div className="app">
-      <Sidebar activeView={activeView} setActiveView={setActiveView} />
-      <main className="main-content">{renderActiveView()}</main>
-    </div>
-  }
-/>
+          path="/dashboard/shelter"
+          element={
+            <div className="app">
+              <Sidebar activeView={activeView} setActiveView={setActiveView} />
+              <main className="main-content">{renderActiveView()}</main>
+            </div>
+          }
+        />
 
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -77,16 +75,21 @@ function App() {
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
-        <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
-        <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
+        <Route path="/dashboard/pet-appointment" element={<PetAppointment />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
         <Route path="/dashboard/my-pet" element={<Mypet />} />
-        <Route path="/ShelterDashboard" element={
-          <div className="app">
-            <Sidebar activeView={activeView} setActiveView={setActiveView} />
-            <main className="main-content">{renderActiveView()}</main>
-          </div>
-        } />
+        <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
+                <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
+
+        <Route
+          path="/ShelterDashboard"
+          element={
+            <div className="app">
+              <Sidebar activeView={activeView} setActiveView={setActiveView} />
+              <main className="main-content">{renderActiveView()}</main>
+            </div>
+          }
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
