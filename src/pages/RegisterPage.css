@@ -67,7 +67,6 @@
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .register-page {
     padding: 1rem;
