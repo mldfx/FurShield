@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiUpload, FiFileText } from "react-icons/fi";
 import { MdPets, MdOutlineFolderOpen } from "react-icons/md";
 import "./DocumentUpload.css";
@@ -9,6 +10,7 @@ const DocumentUpload = ({ onUpload }) => {
   const [file, setFile] = useState(null);
   const [category, setCategory] = useState("Vet Certificate");
   const [preview, setPreview] = useState(null);
+  const navigate = useNavigate();
 
   const handleFileChange = (e) => {
     const selected = e.target.files[0];
@@ -50,6 +52,7 @@ const DocumentUpload = ({ onUpload }) => {
 
   return (
     <>
+  <button className="back-dashboard-btn" onClick={() => navigate("/dashboard/pet-owner")}>⟵ Back to Dashboard</button>
       {/* Friendly Intro Section */}
       <div className="intro-text">
         {!file ? (
@@ -136,3 +139,6 @@ const DocumentUpload = ({ onUpload }) => {
 };
 
 export default DocumentUpload;
+              <div className="back-dashboard-container">
+                <button className="back-dashboard-btn" onClick={() => navigate("/dashboard/petowner")}>⟵ Back to Dashboard</button>
+              </div>

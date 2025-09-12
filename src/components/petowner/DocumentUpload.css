@@ -15,14 +15,14 @@
 .intro-text h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #2f4f4f; /* Dark teal/gray */
+  color: #2f4f4f;
   margin-bottom: 12px;
   text-align: center;
 }
 
 .intro-text p {
   font-size: 1rem;
-  color: #555;
+  color: #444;
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
@@ -30,20 +30,18 @@
 
 /* CARD STYLES */
 .document-upload-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fdfdfd 100%);
   border-radius: 24px;
   padding: 32px;
   max-width: 520px;
   margin: 40px auto;
   box-shadow: 
     0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #A8E6CF; /* mint border */
   text-align: center;
   position: relative;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
 }
 
 .document-upload-card::before {
@@ -53,42 +51,32 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: linear-gradient(90deg, #98FF98 0%, #FFDAB9 100%); /* mint to peach strip */
   border-radius: 24px 24px 0 0;
 }
 
+/* Hover effect */
 .document-upload-card:hover {
   transform: translateY(-5px);
   box-shadow: 
     0 25px 30px -5px rgba(0, 0, 0, 0.15),
-    0 15px 15px -5px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+    0 15px 15px -5px rgba(0, 0, 0, 0.08);
 }
 
+/* Heading */
 .document-upload-card h2 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 8px;
   letter-spacing: -0.025em;
-  position: relative;
+  background: linear-gradient(135deg, #98FF98 0%, #FFDAB9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.document-upload-card h2::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
-  border-radius: 2px;
-}
-
+/* Upload Form */
 .upload-form {
   display: flex;
   flex-direction: column;
@@ -100,166 +88,138 @@
   font-size: 1rem;
   font-weight: 600;
   color: #374151;
-  text-align: left;
   margin-bottom: 8px;
   display: block;
-  letter-spacing: 0.025em;
 }
 
+/* Styled Select */
 .styled-select {
   padding: 16px 20px;
   border-radius: 16px;
-  border: 2px solid #e5e7eb;
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 2px solid #FFDAB9;
+  background: #FFF8F5;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #374151;
-  appearance: none;
-  background-position: right 16px center;
-  background-repeat: no-repeat;
-  background-size: 16px;
-  padding-right: 48px;
+  transition: all 0.3s ease;
 }
 
 .styled-select:hover {
-  border-color: #8b5cf6;
-  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-  transform: translateY(-1px);
+  border-color: #98FF98;
+  box-shadow: 0 4px 6px rgba(152, 255, 152, 0.1);
 }
 
 .styled-select:focus {
   outline: none;
-  border-color: #8b5cf6;
-  box-shadow: 
-    0 0 0 3px rgba(139, 92, 246, 0.1),
-    0 4px 6px -1px rgba(139, 92, 246, 0.1);
+  border-color: #98FF98;
+  box-shadow: 0 0 0 3px rgba(152, 255, 152, 0.2);
 }
 
+/* Drop Zone */
 .drop-zone {
-  border: 2px dashed #d1d5db;
+  border: 2px dashed #A8E6CF;
   border-radius: 20px;
   padding: 48px 32px;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: #F6FFFA;
   cursor: pointer;
-  color: #6b7280;
+  color: #2f4f4f;
   font-size: 1rem;
   font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .drop-zone:hover {
-  border-color: #8b5cf6;
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-  color: #7c3aed;
+  border-color: #FFDAB9;
+  background: #FFF8F5;
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.1);
 }
 
-.drop-zone:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-}
-
+/* Preview */
 .preview {
   margin-top: 24px;
-  position: relative;
 }
 
 .preview img {
   max-width: 100%;
   max-height: 300px;
   border-radius: 16px;
-  border: 3px solid #e5e7eb;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 3px solid #A8E6CF;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
 .preview img:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
+/* File Preview (non-image) */
 .file-preview {
   margin-top: 16px;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  background: #ecfdf5;
   border-radius: 12px;
   color: #065f46;
   font-weight: 600;
   font-size: 0.95rem;
-  border: 1px solid #a7f3d0;
+  border: 1px solid #A8E6CF;
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
+/* Upload Button */
 .upload-btn {
-  padding: 18px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #98FF98 0%, #FFDAB9 100%);
+  color: #2f4f4f;
   border: none;
   border-radius: 16px;
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 4px 6px -1px rgba(102, 126, 234, 0.4);
-}
-
-.upload-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  transition: all 0.3s ease;
 }
 
 .upload-btn:hover {
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4);
-}
-
-.upload-btn:hover::before {
-  left: 100%;
-}
-
-.upload-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 6px -1px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 .upload-btn:disabled {
-  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  background: #ddd;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 
-.upload-btn:disabled:hover {
-  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
-  transform: none;
-  box-shadow: none;
+/* BACK DASHBOARD BUTTON */
+.back-dashboard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #A8E6CF 0%, #FFDAB9 100%);
+  color: #2F4F4F;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(168, 230, 207, 0.15);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
-/* Responsive Design */
+.back-dashboard-btn:hover {
+  background: linear-gradient(90deg, #98FF98 0%, #FFDAB9 100%);
+  box-shadow: 0 4px 16px rgba(168, 230, 207, 0.25);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Responsive */
 @media (max-width: 640px) {
   .document-upload-card {
     max-width: 95%;
-    margin: 20px auto;
     padding: 24px;
-    border-radius: 20px;
   }
 
   .document-upload-card h2 {
@@ -273,56 +233,6 @@
 
   .upload-btn {
     font-size: 1rem;
-    padding: 16px 28px;
+    padding: 14px 28px;
   }
-
-  .styled-select {
-    padding: 14px 16px;
-    padding-right: 44px;
-  }
-}
-
-@media (max-width: 480px) {
-  .document-upload-card {
-    padding: 20px;
-    margin: 16px auto;
-  }
-
-  .upload-form {
-    gap: 20px;
-  }
-
-  .drop-zone {
-    padding: 28px 16px;
-  }
-
-  .preview img {
-    max-height: 200px;
-  }
-}
-
-/* Loading Animation */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.upload-btn.loading {
-  background: linear-gradient(90deg, #667eea 25%, #8b5cf6 50%, #667eea 75%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-/* Success State */
-.upload-btn.success {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4);
-}
-
-.upload-btn.success:hover {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
