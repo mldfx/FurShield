@@ -1,24 +1,27 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-import LandingPage from "./pages/LandingPage"
-import LoginPage from "./pages/LoginPage"
-import RegisterPage from "./pages/RegisterPage"
-import PetOwnerDashboard from "./pages/PetOwnerDashboard"
-import VeterinarianDashboard from "./pages/VeterinarianDashboard"
-import ShelterDashboard from "./pages/ShelterDashboard"
-import AboutPage from "./pages/AboutPage"
-import ContactPage from "./pages/ContactPage"
-import FeedbackPage from "./pages/FeedbackPage"
-import "./App.css"
-import TreatmentLogs from "./components/medical/TreatmentLogs"
-import StructuredView from "./components/medical/StructuredView"
-import Cat from "./components/medical/cat"
-import Fish from "./components/medical/fish"
-import Other from "./components/medical/other"
-import ProductCatalog from "./pages/ProductCatalog"
-import HealthRecords from "./components/petowner/HealthRecords"
-import HealthTimeline from "./components/petowner/HealthTimeline"
-import DocumentUpload from "./components/petowner/DocumentUpload"
-import PetAppointment from "./components/petowner/petappointment"
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import PetOwnerDashboard from "./pages/PetOwnerDashboard";
+import VeterinarianDashboard from "./pages/VeterinarianDashboard";
+import ShelterDashboard from "./pages/ShelterDashboard";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import FeedbackPage from "./pages/FeedbackPage";
+import TreatmentLogs from "./components/medical/TreatmentLogs";
+import StructuredView from "./components/medical/StructuredView";
+import Cat from "./components/medical/cat";
+import Fish from "./components/medical/fish";
+import Other from "./components/medical/other";
+import ProductCatalog from "./pages/ProductCatalog";
+import HealthRecords from "./components/petowner/HealthRecords";
+import HealthTimeline from "./components/petowner/HealthTimeline";
+import DocumentUpload from "./components/petowner/DocumentUpload";
+import PetAppointment from "./components/petowner/petappointment";
+import CareOptions from "./components/care/CareOptions";
+import Mypet from "./components/petowner/Mypet";
+
 import Sidebar from "./components/AnimalShelter/Sidebar";
 import PetProfiles from "./components//AnimalShelter/PetProfiles";
 import PetCareStatus from "./components//AnimalShelter/PetCareStatus";
@@ -78,9 +81,15 @@ function App() {
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
-
-        <Route path="/dashboard/appointments" element={<PetAppointment />} />
-   
+        <Route path="/dashboard/pet-appointment" element={<PetAppointment />} />
+        <Route path="/dashboard/care-resources" element={<CareOptions />} />
+        <Route path="/dashboard/my-pet" element={<Mypet />} />
+        <Route path="/ShelterDashboard" element={
+          <div className="app">
+            <Sidebar activeView={activeView} setActiveView={setActiveView} />
+            <main className="main-content">{renderActiveView()}</main>
+          </div>
+        } />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
