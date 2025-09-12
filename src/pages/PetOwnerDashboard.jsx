@@ -25,7 +25,7 @@ const PetOwnerDashboard = () => {
               </div>
             </div>
 
-            <Link to="/dashboard/health-records">
+            <Link to="/dashboard/health-records" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
                 <h3>📋 Health Records</h3>
                 <p>View and manage your pet's health records</p>
@@ -37,7 +37,7 @@ const PetOwnerDashboard = () => {
               </div>
             </Link>
 
-            <Link to="/dashboard/health-timeline">
+            <Link to="/dashboard/health-timeline" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
                 <h3>🕒 Health Timeline</h3>
                 <p>See your pet's health events in a timeline</p>
@@ -49,7 +49,7 @@ const PetOwnerDashboard = () => {
               </div>
             </Link>
 
-            <Link to="/dashboard/document-upload">
+            <Link to="/dashboard/document-upload" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
                 <h3>📂 Document Upload</h3>
                 <p>Upload and manage pet documents</p>
@@ -61,7 +61,7 @@ const PetOwnerDashboard = () => {
               </div>
             </Link>
 
-            <Link to="/dashboard/insurance-management">
+            <Link to="/dashboard/insurance-management" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
                 <h3>🛡️ Insurance Management</h3>
                 <p>Manage your pet's insurance details</p>
@@ -83,7 +83,7 @@ const PetOwnerDashboard = () => {
               </div>
             </div>
 
-            <Link to="/dashboard/care-resources">
+            <Link to="/dashboard/care-resources" className="pet-owner-dashboard-link">
               <div className="dashboard-card">
                 <h3>📚 Care Resources</h3>
                 <p>Pet care information will be implemented here</p>

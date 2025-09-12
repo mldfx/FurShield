@@ -18,6 +18,7 @@ import ProductCatalog from "./pages/ProductCatalog";
 import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
 import DocumentUpload from "./components/petowner/DocumentUpload";
+import InsuranceManagement from "./components/petowner/InsuranceManagement";
 import CareOptions from "./components/care/CareOptions";
 
 function App() {
@@ -28,10 +29,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
-        <Route
-          path="/dashboard/veterinarian"
-          element={<VeterinarianDashboard />}
-        />
+        <Route path="/dashboard/veterinarian" element={<VeterinarianDashboard />} />
         <Route path="/dashboard/shelter" element={<ShelterDashboard />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -45,6 +43,7 @@ function App() {
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />
         <Route path="/dashboard/document-upload" element={<DocumentUpload />} />
+        <Route path="/dashboard/insurance-management" element={<InsuranceManagement />} />
         <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
         <Route path="*" element={<Navigate to="/" replace />} />
