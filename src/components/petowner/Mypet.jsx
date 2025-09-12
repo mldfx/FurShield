@@ -318,7 +318,7 @@ const Mypet = () => {
             <h2>{pet.name}</h2>
             <div className="mypet-profile-meta">
               <p>
-                <strong>Animal:</strong> {pet.animal}
+                <strong>Animalz:</strong> {pet.animal}
               </p>
               <p>
                 <strong>Breed:</strong> {pet.breed}
@@ -434,7 +434,7 @@ const Mypet = () => {
           <PetForm initialData={isEditing && selectedPet ? selectedPet : {}} />
         )}
       </main>
-      <Link to="/dashboard/pet-owners">
+      <Link to="/dashboard/pet-owner">
         <button className="back-btns">⟵ Back to Dashboard</button>
       </Link>
       <footer className="mypet-app-footer">

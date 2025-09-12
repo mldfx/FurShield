@@ -26,7 +26,6 @@ import Sidebar from "./components/AnimalShelter/Sidebar";
 import PetProfiles from "./components//AnimalShelter/PetProfiles";
 import PetCareStatus from "./components//AnimalShelter/PetCareStatus";
 import AdopterInterest from "./components//AnimalShelter/AdopterInterest";
-// import Dashboard from "./components/SDashboard";
 
 import "./App.css";
 
@@ -87,6 +86,7 @@ function App() {
         <Route path="/dashboard/pet-appointment" element={<PetAppointment />} />
         <Route path="/dashboard/care-resources" element={<CareOptions />} />
         <Route path="/dashboard/my-pet" element={<Mypet />} />
+        <Route path="/dashboard/pet-owner" element={<PetOwnerDashboard />} />
         <Route
           path="/ShelterDashboard"
           element={

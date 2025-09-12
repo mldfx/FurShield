@@ -15,7 +15,7 @@ const PetOwnerDashboard = () => {
           </div>
 
           <div className="dashboard-grid">
-            <Link to="/dashboard/My-pet" className="pet-link">
+            <Link to="/dashboard/my-pet" className="pet-link">
               <div className="dashboard-card">
                 <h3>🐕 My Pets</h3>
                 <p>Pet profile management will be implemented here</p>
