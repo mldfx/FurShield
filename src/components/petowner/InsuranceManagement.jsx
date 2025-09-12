@@ -276,13 +276,13 @@ export default function InsuranceManagement() {
           </main>
 
           {/* Sidebar */}
-          <aside className="sidebar">
-            <div className="sidebar-card">
+          <aside className="insurance-sidebar">
+            <div className="insurance-sidebar-card">
               <div className="clinic-badge">
                 <Award className="badge-icon" />
                 <span className="badge-text">Clinic Partner</span>
               </div>
-              <p className="sidebar-description">We work with trusted insurers to simplify claims and paperwork.</p>
+              <p className="insurance-sidebar-description">We work with trusted insurers to simplify claims and paperwork.</p>
 
               <div className="phone-info">
                 <Phone className="phone-icon" />

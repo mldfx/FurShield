@@ -11,9 +11,6 @@ import ContactPage from "./pages/ContactPage";
 import FeedbackPage from "./pages/FeedbackPage";
 import TreatmentLogs from "./components/medical/TreatmentLogs";
 import StructuredView from "./components/medical/StructuredView";
-import Cat from "./components/medical/cat";
-import Fish from "./components/medical/fish";
-import Other from "./components/medical/other";
 import ProductCatalog from "./pages/ProductCatalog";
 import HealthRecords from "./components/petowner/HealthRecords";
 import HealthTimeline from "./components/petowner/HealthTimeline";
@@ -76,9 +73,6 @@ function App() {
         <Route path="/feedback" element={<FeedbackPage />} />
         <Route path="/treatment-log" element={<TreatmentLogs />} />
         <Route path="/structured-view" element={<StructuredView />} />
-        <Route path="/cat" element={<Cat />} />
-        <Route path="/fish" element={<Fish />} />
-        <Route path="/other" element={<Other />} />
         <Route path="/catalog" element={<ProductCatalog />} />
         <Route path="/dashboard/health-records" element={<HealthRecords />} />
         <Route path="/dashboard/health-timeline" element={<HealthTimeline />} />

@@ -143,7 +143,7 @@ const VeterinarianDashboard = () => {
           </Link>
         </nav>
         {/* Welcome Section */}
-        <div className="vet-container">
+        <div className="vet-dashboard-container">
           <div className="welcome-card-vet">
             <div className="vet-welcome-image">
               <img
