@@ -152,8 +152,9 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem */
   text-align: left;
+  font-weight: 600; /* Make category name bold */
 }
 
 .category-btn:hover {
@@ -161,14 +162,29 @@
   background: #f0f9ff;
 }
 
+.category-selected-indicator {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  color: #81c028;
+  transition: opacity 0.2s;
+}
+
 .category-btn.active {
   background: #7dd3fc;
   border-color: #7dd3fc;
   color: #ffffff;
+  box-shadow: 0 0 0 2px #81c028;
+  transition: box-shadow 0.2s;
 }
 
 .category-icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem; 
+}
+
+.category-btn .category-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .price-section {

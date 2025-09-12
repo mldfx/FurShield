@@ -1,0 +1,458 @@
+/* src/Mypet.css */
+
+/* ===== THEME COLORS ===== */
+:root {
+  --mintgreen: #aaf0d1;
+  --peach: #ffdab9;
+  --white: #ffffff;
+  --dark-mint: #77c7a1;
+  --light-peach: #fff5eb;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+}
+
+/* ===== GLOBAL RESET ===== */
+.mypet-app * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mypet-app {
+  min-height: 100vh;
+  background-color: var(--white);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--text-dark);
+}
+
+/* ===== HEADER ===== */
+.mypet-app-header {
+  background: linear-gradient(135deg, var(--mintgreen), var(--dark-mint));
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mypet-app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.mypet-app-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ===== MAIN CONTENT ===== */
+.mypet-app-main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2.5rem;
+}
+
+/* ===== ACTION BAR ===== */
+.mypet-actions-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+/* ===== BUTTONS ===== */
+.mypet-btn-primary {
+  background: var(--dark-mint);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(119, 199, 161, 0.3);
+}
+
+.mypet-btn-primary:hover {
+  background: #5da483;
+  transform: translateY(-2px);
+}
+
+.mypet-btn-secondary {
+  background: var(--peach);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mypet-btn-secondary:hover {
+  background: #ffb78c;
+}
+
+.mypet-btn-delete {
+  background: #ff6b6b;
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mypet-btn-delete:hover {
+  background: #e05555;
+}
+
+/* ===== EMPTY STATE ===== */
+.mypet-empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--light-peach);
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+.mypet-empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.mypet-empty-state h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.mypet-empty-state p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* ===== PET TILES GRID ===== */
+.mypet-pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.mypet-pet-tile {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.mypet-pet-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.mypet-pet-tile.selected {
+  border-color: var(--dark-mint);
+  background-color: rgba(170, 240, 209, 0.2);
+}
+
+.mypet-pet-tile-image {
+  height: 160px;
+  background: var(--light-peach);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mypet-pet-tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mypet-tile-placeholder {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--mintgreen), var(--peach));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.mypet-pet-tile-info {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.mypet-pet-tile-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.mypet-pet-tile-info p {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ===== PET PROFILE ===== */
+.mypet-pet-profile {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+  border: 2px solid var(--mintgreen);
+}
+
+.mypet-profile-header {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.mypet-profile-image-large {
+  flex: 0 0 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border: 6px solid var(--white);
+}
+
+.mypet-profile-img-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mypet-placeholder-image-large {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--mintgreen), var(--peach));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.mypet-profile-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mypet-profile-details h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.mypet-profile-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.mypet-profile-meta p {
+  margin: 0.3rem 0;
+  padding: 0.7rem;
+  background: var(--light-peach);
+  border-radius: 10px;
+}
+
+.mypet-profile-notes {
+  background: var(--light-peach);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.mypet-profile-notes h4 {
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+}
+
+.mypet-profile-notes p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.mypet-profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ===== MODAL ===== */
+.mypet-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.mypet-modal-content {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.mypet-modal-content h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--mintgreen);
+}
+
+/* ===== FORMS ===== */
+.mypet-pet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mypet-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mypet-form-group label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.mypet-form-group input,
+.mypet-form-group select,
+.mypet-form-group textarea {
+  padding: 0.9rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.mypet-form-group input:focus,
+.mypet-form-group select:focus,
+.mypet-form-group textarea:focus {
+  outline: none;
+  border-color: var(--dark-mint);
+  box-shadow: 0 0 0 3px rgba(119, 199, 161, 0.2);
+}
+
+.mypet-form-actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===== IMAGE UPLOAD ===== */
+.mypet-image-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  background: var(--light-peach);
+}
+
+.mypet-image-preview {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 4px solid var(--white);
+}
+
+/* ===== FOOTER ===== */
+.mypet-app-footer {
+  background: linear-gradient(to right, var(--mintgreen), var(--peach));
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: auto;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .mypet-app-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .mypet-app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .mypet-app-main {
+    padding: 1.5rem;
+  }
+  
+  .mypet-profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .mypet-profile-image-large {
+    flex: 0 0 200px;
+    height: 200px;
+  }
+  
+  .mypet-actions-bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mypet-pets-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mypet-modal-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
