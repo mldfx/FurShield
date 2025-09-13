@@ -174,7 +174,7 @@
   background-color: #ffffff;
 }
 
-.features h2 {
+.features h2, .pc-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
@@ -237,6 +237,297 @@
   border-radius: 50%;
   border: 2px solid #e2e8f0;
   padding: 0.5rem;
+}
+.services-overview {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.services-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+.book-appointment-cta {
+  background: linear-gradient(135deg, #6ec1e4, #4178be);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4178be;
+  background-color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #f1f5f9;
+  color: #2b5d96;
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional animated background bubbles */
+.book-appointment-cta::before,
+.book-appointment-cta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 10s infinite linear;
+}
+
+.book-appointment-cta::before {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+
+.book-appointment-cta::after {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: -80px;
+}
+
+.pet-product-showcase {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.landing-page-pet-prdt {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.landing-page-pet-prdt .product-image {
+  flex: 1 1 450px;
+  height: 60%;
+  text-align: center;
+}
+
+.landing-page-pet-prdt .product-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.landing-page-pet-prdt .landing-page-pet-prdt .product-image img:hover {
+  transform: scale(1.05);
+}
+
+.landing-page-pet-prdt .product-details {
+  flex: 1 1 450px;
+  text-align: left;
+}
+
+.landing-page-pet-prdt .product-name {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.landing-page-pet-prdt .product-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.landing-page-pet-prdt .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #48bb78;
+  margin-bottom: 25px;
+}
+
+.landing-page-pet-prdt .product-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #00FFB2 0%, #fbb6a0 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.product-button:hover {
+  background-color: #305a8e;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.pc-reviews-wrap { 
+  font-family: Arial, sans-serif; 
+  margin-bottom: 40px; 
+  margin-top: 40px;
+}
+.pc-toolbar { 
+  display:flex; 
+  flex-direction: column; 
+  align-items:center; 
+}
+
+.pc-sub { 
+  color:#6b7280; 
+  font-size:13px; 
+}
+.pc-carousel { 
+  display:flex; 
+  width: 90%; 
+  margin: 0 auto; 
+  gap:12px; 
+  overflow-x:auto; 
+  padding-bottom:6px; 
+}
+.pc-carousel::-webkit-scrollbar {
+  display: none;
+}
+.pc-card { 
+  background:#fff; 
+  border:1px solid #e6e6e9; 
+  border-radius:12px; 
+  min-width:280px; 
+  max-width:380px; 
+  padding:12px; 
+  box-shadow:0 6px 18px rgba(16,24,40,0.04); 
+}
+.pc-header { 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+}
+.pc-avatar {
+  width:44px; 
+  height:44px; 
+  border-radius:50%; 
+  object-fit:cover; 
+}
+.pc-user { 
+  display:flex; 
+  flex-direction:column; 
+}
+.pc-name { 
+  font-weight:600; 
+  font-size:14px; 
+}
+.pc-meta { 
+  color:#6b7280; 
+  font-size:12px; 
+}
+.pc-image-main { 
+  width:100%; 
+  height:220px; 
+  border-radius:10px; 
+  object-fit:cover; 
+  margin-top:10px; 
+}
+.pc-actions { 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+  margin-top: 8px;
+}
+
+.pc-rating { 
+  margin-left:auto;
+  color: #ffab91;
+  font-size:16px; 
+  font-weight: 500;
+}
+.pc-caption { 
+  font-size:14px; 
+  color:#111827; 
 }
 
 /* Footer */
@@ -317,7 +608,7 @@
     text-align: center;
   }
 
-  .hero-text h1 {
+  .hero-text h1, .pc-title {
     font-size: 2rem;
   }
 
@@ -399,7 +690,14 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+  .landing-page-pet-prdt {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .product-details {
+    text-align: center;
+  }
   /* Footer stack */
   .footer-content {
     grid-template-columns: 1fr;
@@ -438,4 +736,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+}
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
 }

@@ -5,8 +5,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
@@ -55,7 +56,6 @@ body {
   overflow-y: auto;
 }
 
-
 .sidebar-header {
   margin-bottom: 2rem;
 }
@@ -84,9 +84,8 @@ body {
   border: none;
   transition: background-color 0.2s;
   font-weight: 500;
-}r
-
-.nav-link:hover {
+}
+r .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -355,5 +354,73 @@ body {
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Hamburger button */
+.hamburger-btn {
+  display: none;
+  background: #68d391;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  border-radius: 8px;
+}
+
+/* Close button (inside sidebar for mobile) */
+.close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Sidebar default (desktop) */
+.sidebar {
+  width: 280px;
+  background-color: #68d391;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile: sidebar hidden by default */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 240px;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .close-btn {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0; /* no push on mobile */
   }
 }

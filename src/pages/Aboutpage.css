@@ -114,9 +114,10 @@
 
 .member-info h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #2d3748;
   margin-bottom: 0.5rem;
+  justify-content: center;
 }
 
 .member-info p:first-of-type {

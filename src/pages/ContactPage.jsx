@@ -1,14 +1,15 @@
+// ContactUs.jsx
 import "./ContactPage.css"
 import logo from "../assets/images/furshield-Logo.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-export default function AboutPage() {
+export default function ContactUs() {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
   return (
-    <div className="about-page">
+    <div className="contact-page">
       {/* Header */}
       <header className="header">
         <div className="container nav">
@@ -108,7 +109,10 @@ export default function AboutPage() {
                 </div>
                 <div className="info-item">
                   <h3>Emergency Support</h3>
-                  <p>For urgent veterinary emergencies, please contact your local emergency vet clinic directly.</p>
+                  <p>
+                    For urgent veterinary emergencies, please contact your local
+                    emergency vet clinic directly.
+                  </p>
                 </div>
               </div>
             </div>
@@ -121,8 +125,16 @@ export default function AboutPage() {
         <div className="container">
           <h2>Find Us</h2>
           <div className="map-placeholder">
-            <p>Interactive Map Coming Soon</p>
-            <p>123 Pet Care Avenue, Animal City, AC 12345</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25016.35197701405!2d3.8688026108398357!3d7.414494899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398dc0fd699c6b%3A0xfe390394488fc9b9!2sShaleekeen%20Pet%20Home!5e1!3m2!1sen!2sng!4v1757753406741!5m2!1sen!2sng"
+              width="600"
+              height="450"
+              style={{ width: "100%", height: "400px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="FurShield Location"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -136,22 +148,25 @@ export default function AboutPage() {
                 <img src={logo} alt="FurShield" />
                 <span>FurShield</span>
               </div>
-              <p>Professional pet care platform connecting owners, vets, and shelters.</p>
+              <p>
+                Professional pet care platform connecting owners, vets, and
+                shelters.
+              </p>
             </div>
             <div className="footer-section">
               <h4>Quick Links</h4>
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/about">About Us</a>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <a href="/contact">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                  <a href="/feedback">Feedback</a>
+                  <Link to="/feedback">Feedback</Link>
                 </li>
               </ul>
             </div>
@@ -159,13 +174,13 @@ export default function AboutPage() {
               <h4>Support</h4>
               <ul>
                 <li>
-                  <a href="/help">Help Center</a>
+                  <Link to="/help">Help Center</Link>
                 </li>
                 <li>
-                  <a href="/privacy">Privacy Policy</a>
+                  <Link to="/privacy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="/terms">Terms of Service</a>
+                  <Link to="/terms">Terms of Service</Link>
                 </li>
               </ul>
             </div>

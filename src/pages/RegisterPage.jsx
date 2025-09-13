@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegisterPage.css";
+import axios from "axios";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -10,22 +11,10 @@ const RegisterPage = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    role: "pet-owner",
-    licenseNumber: "",
-    specialization: "",
-    organizationName: "",
-    shelterType: "",
-    petCount: "",
-    experience: "",
+    role: "owner",
+    phone: "",
+    address: "",
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Registration attempt:", formData);
-
-    // Redirect to login after registration
-    navigate("/login");
-  };
 
   const handleChange = (e) => {
     setFormData({
@@ -34,112 +23,37 @@ const RegisterPage = () => {
     });
   };
 
-  const renderRoleSpecificFields = () => {
-    switch (formData.role) {
-      case "veterinarian":
-        return (
-          <>
-            <div className="form-group">
-              <label className="form-label">Veterinary License Number</label>
-              <input
-                type="text"
-                name="licenseNumber"
-                className="form-input"
-                value={formData.licenseNumber}
-                onChange={handleChange}
-                required
-                placeholder="Enter your license number"
-              />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Specialization</label>
-              <select
-                name="specialization"
-                className="form-input"
-                value={formData.specialization}
-                onChange={handleChange}
-              >
-                <option value="">Select specialization</option>
-                <option value="general">General Practice</option>
-                <option value="surgery">Surgery</option>
-                <option value="internal-medicine">Internal Medicine</option>
-                <option value="emergency">Emergency Medicine</option>
-                <option value="exotic">Exotic Animals</option>
-                <option value="dermatology">Dermatology</option>
-                <option value="cardiology">Cardiology</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label className="form-label">Years of Experience</label>
-              <select name="experience" className="form-input" value={formData.experience} onChange={handleChange}>
-                <option value="">Select experience</option>
-                <option value="0-2">0-2 years</option>
-                <option value="3-5">3-5 years</option>
-                <option value="6-10">6-10 years</option>
-                <option value="10+">10+ years</option>
-              </select>
-            </div>
-          </>
-        );
-      case "shelter":
-        return (
-          <>
-            <div className="form-group">
-              <label className="form-label">Organization Name</label>
-              <input
-                type="text"
-                name="organizationName"
-                className="form-input"
-                value={formData.organizationName}
-                onChange={handleChange}
-                required
-                placeholder="Enter shelter/organization name"
-              />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Shelter Type</label>
-              <select name="shelterType" className="form-input" value={formData.shelterType} onChange={handleChange}>
-                <option value="">Select shelter type</option>
-                <option value="municipal">Municipal Shelter</option>
-                <option value="private">Private Shelter</option>
-                <option value="rescue">Rescue Organization</option>
-                <option value="sanctuary">Animal Sanctuary</option>
-                <option value="foster">Foster Network</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label className="form-label">Current Animal Capacity</label>
-              <select name="petCount" className="form-input" value={formData.petCount} onChange={handleChange}>
-                <option value="">Select capacity</option>
-                <option value="1-25">1-25 animals</option>
-                <option value="26-50">26-50 animals</option>
-                <option value="51-100">51-100 animals</option>
-                <option value="100+">100+ animals</option>
-              </select>
-            </div>
-          </>
-        );
-      case "pet-owner":
-        return (
-          <div className="form-group">
-            <label className="form-label">Number of Pets</label>
-            <select name="petCount" className="form-input" value={formData.petCount} onChange={handleChange}>
-              <option value="">Select number of pets</option>
-              <option value="1">1 pet</option>
-              <option value="2">2 pets</option>
-              <option value="3">3 pets</option>
-              <option value="4+">4+ pets</option>
-            </select>
-          </div>
-        );
-      default:
-        return null;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Basic client-side validation
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    console.log("Registration attempt:", formData);
+
+    try {
+      const res = await axios.post(
+        `http://localhost:5000/api/v1/auth/signup`,
+        formData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      console.log("Registration successful:", res.data);
+      navigate("/login");
+    } catch (error) {
+      console.error("Registration failed:", error.response?.data || error.message);
+      alert(error.response?.data?.message || "Registration failed");
     }
   };
 
   const getRoleSpecificHeader = () => {
     switch (formData.role) {
-      case "veterinarian":
+      case "vet":
         return {
           title: "🩺 Join as Veterinarian",
           subtitle: "Register your practice and start managing patient care",
@@ -149,7 +63,7 @@ const RegisterPage = () => {
           title: "🏠 Register Your Shelter",
           subtitle: "Join our network and streamline your adoption process",
         };
-      case "pet-owner":
+      case "owner":
       default:
         return {
           title: "🐾 Join FurShield",
@@ -164,7 +78,9 @@ const RegisterPage = () => {
     <div className="register-page">
       <div className="register-container">
         <div className="register-header">
-          <a href="/" className="back-link">← Back to Home</a>
+          <a href="/" className="back-link">
+            ← Back to Home
+          </a>
           <h1>{headerContent.title}</h1>
           <p>{headerContent.subtitle}</p>
         </div>
@@ -172,15 +88,25 @@ const RegisterPage = () => {
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">I am a:</label>
-            <select name="role" className="form-input" value={formData.role} onChange={handleChange}>
-              <option value="pet-owner">Pet Owner</option>
-              <option value="veterinarian">Veterinarian</option>
+            <select
+              name="role"
+              className="form-input"
+              value={formData.role}
+              onChange={handleChange}
+              required
+            >
+              <option value="owner">Pet Owner</option>
+              <option value="vet">Veterinarian</option>
               <option value="shelter">Animal Shelter</option>
             </select>
           </div>
 
           <div className="form-group">
-            <label className="form-label">{formData.role === "shelter" ? "Contact Person Name" : "Full Name"}</label>
+            <label className="form-label">
+              {formData.role === "shelter"
+                ? "Contact Person Name"
+                : "Full Name"}
+            </label>
             <input
               type="text"
               name="name"
@@ -188,7 +114,9 @@ const RegisterPage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              placeholder={`Enter your ${formData.role === "shelter" ? "contact person" : "full"} name`}
+              placeholder={`Enter your ${
+                formData.role === "shelter" ? "contact person" : "full"
+              } name`}
             />
           </div>
 
@@ -201,11 +129,35 @@ const RegisterPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              placeholder={`Enter your ${formData.role === "veterinarian" ? "professional" : formData.role === "shelter" ? "organization" : ""} email`}
+              placeholder="Enter your email"
             />
           </div>
 
-          {renderRoleSpecificFields()}
+          <div className="form-group">
+            <label className="form-label">Phone Number</label>
+            <input
+              type="tel"
+              name="phone"
+              className="form-input"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Address</label>
+            <input
+              type="text"
+              name="address"
+              className="form-input"
+              value={formData.address}
+              onChange={handleChange}
+              required
+              placeholder="Enter your address"
+            />
+          </div>
 
           <div className="form-group">
             <label className="form-label">Password</label>
@@ -234,16 +186,18 @@ const RegisterPage = () => {
           </div>
 
           <button type="submit" className="btn btn-primary register-btn">
-            {formData.role === "veterinarian"
+            {formData.role === "vet"
               ? "Register Practice"
               : formData.role === "shelter"
-                ? "Register Shelter"
-                : "Create Account"}
+              ? "Register Shelter"
+              : "Create Account"}
           </button>
         </form>
 
         <div className="register-footer">
-          <p>Already have an account? <a href="/login">Sign in here</a></p>
+          <p>
+            Already have an account? <a href="/login">Sign in here</a>
+          </p>
         </div>
       </div>
     </div>

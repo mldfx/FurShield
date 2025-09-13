@@ -1,12 +1,12 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import "./AboutPage.css"
-import logo from "../assets/images/furshield-logo.jpg"
-import petcare from "../assets/images/pet-care.jpg"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./AboutPage.css";
+import logo from "../assets/images/furshield-logo.jpg";
+import petcare from "../assets/images/pet-care.jpg";
 
 export default function AboutPage() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <div className="about-page">
@@ -46,7 +46,10 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-hero-content">
             <h1>About FurShield</h1>
-            <p>Connecting pet owners, veterinarians, and shelters for comprehensive pet care</p>
+            <p>
+              Connecting pet owners, veterinarians, and shelters for
+              comprehensive pet care
+            </p>
           </div>
         </div>
       </section>
@@ -58,12 +61,15 @@ export default function AboutPage() {
             <div className="mission-text">
               <h2>Our Mission</h2>
               <p>
-                At FurShield, we believe every pet deserves the best care possible. Our platform connects pet owners
-                with trusted veterinarians and shelters, making pet healthcare accessible, efficient, and comprehensive.
+                At FurShield, we believe every pet deserves the best care
+                possible. Our platform connects pet owners with trusted
+                veterinarians and shelters, making pet healthcare accessible,
+                efficient, and comprehensive.
               </p>
               <p>
-                We're dedicated to improving the lives of pets and their families through innovative technology and
-                compassionate care coordination.
+                We're dedicated to improving the lives of pets and their
+                families through innovative technology and compassionate care
+                coordination.
               </p>
             </div>
             <div className="mission-image">
@@ -82,42 +88,60 @@ export default function AboutPage() {
               <div className="member-info">
                 <h3>Enny</h3>
                 <p>Veterinarian Module Lead</p>
-                <p>Specializes in vet registration, profile management, and appointment systems.</p>
+                <p>
+                  Specializes in vet registration, profile management, and
+                  appointment systems.
+                </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
                 <h3>Gbebemi</h3>
                 <p>Medical Records Specialist</p>
-                <p>Focuses on treatment logs, medical history, and structured health data.</p>
+                <p>
+                  Focuses on treatment logs, medical history, and structured
+                  health data.
+                </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
                 <h3>Clinton</h3>
                 <p>Pet Owner Experience Lead</p>
-                <p>Develops health tracking, insurance management, and owner dashboard features.</p>
+                <p>
+                  Develops health tracking, insurance management, and owner
+                  dashboard features.
+                </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
                 <h3>Dabira</h3>
                 <p>Products & Care Specialist</p>
-                <p>Manages care resources, product catalog, and AI-powered assistance features.</p>
+                <p>
+                  Manages care resources, product catalog, and AI-powered
+                  assistance features.
+                </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
-                <h3>Dabira</h3>
+                <h3>Malik</h3>
                 <p>Products & Care Specialist</p>
-                <p>Manages care resources, product catalog, and AI-powered assistance features.</p>
+                <p>
+                  Manages care resources, product catalog, and AI-powered
+                  assistance features.
+                </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-info">
-                <h3>Dabira</h3>
+                <h3>Fawaz</h3>
                 <p>Products & Care Specialist</p>
-                <p>Manages care resources, product catalog, and AI-powered assistance features.</p>
+                <p>
+                  Manages care resources, product catalog, and AI-powered
+                  assistance features.
+                </p>
               </div>
             </div>
           </div>
@@ -131,15 +155,24 @@ export default function AboutPage() {
           <div className="values-grid">
             <div className="value-card">
               <h3>Compassionate Care</h3>
-              <p>Every pet deserves loving, professional care from qualified veterinarians.</p>
+              <p>
+                Every pet deserves loving, professional care from qualified
+                veterinarians.
+              </p>
             </div>
             <div className="value-card">
               <h3>Innovation</h3>
-              <p>We use cutting-edge technology to make pet healthcare more accessible.</p>
+              <p>
+                We use cutting-edge technology to make pet healthcare more
+                accessible.
+              </p>
             </div>
             <div className="value-card">
               <h3>Trust</h3>
-              <p>Building lasting relationships between pet owners and healthcare providers.</p>
+              <p>
+                Building lasting relationships between pet owners and healthcare
+                providers.
+              </p>
             </div>
           </div>
         </div>
@@ -153,7 +186,10 @@ export default function AboutPage() {
               <img src={logo} alt="FurShield" />
               <span>FurShield</span>
             </div>
-            <p>Professional pet care platform connecting owners, vets, and shelters.</p>
+            <p>
+              Professional pet care platform connecting owners, vets, and
+              shelters.
+            </p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>
@@ -192,5 +228,5 @@ export default function AboutPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
