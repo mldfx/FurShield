@@ -1,6 +1,6 @@
 // ContactUs.jsx
 import "./ContactPage.css"
-import logo from "../assets/images/furshield-Logo.jpg"
+import logo from "../assets/images/furshield-logo.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
