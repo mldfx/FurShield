@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./AboutPage.css";
+import "./Aboutpage.css";
 import logo from "../assets/images/furshield-logo.jpg";
 import petcare from "../assets/images/pet-care.jpg";
 
