@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "./FeedbackPage.css"
-import logo from "../assets/images/furshield-Logo.jpg"
+import logo from "../assets/images/furshield-logo.jpg";
 
 export default function FeedbackPage() {
   const [menuOpen, setMenuOpen] = useState(false)
